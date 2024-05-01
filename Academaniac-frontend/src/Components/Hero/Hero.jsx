@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import "./Hero.css";
 import SearchBar from "./SearchBar";
 import SearchResultsList from "./SearchResultsList";
-import SearchResultsTable from "./SearchResultsTable"
+import SearchResultsTable from "./SearchResultsTable";
 
 const Hero = () => {
   const [results, setResults] = useState([]);
+  const [searchBarContent, setSearchBarContent] = useState("");
   const [selectedOption, setSelectedOption] = useState(null);
 
   const handleViewButtonClick = () => {
@@ -20,10 +21,12 @@ const Hero = () => {
     <div className="hero container">
       <div className="hero-text">
         <h1>Your Ultimate Study Abroad Guide</h1>
-        <SearchBar setResults={setResults} setSelectedOption={setSelectedOption} />
-    
-        <SearchResultsTable results={results} /> 
+        <SearchBar
+          setResults={setResults}
+          setSelectedOption={setSelectedOption}
+        />
 
+        <SearchResultsTable results={results} />
 
         {/* Display the "View" button if an option is selected */}
         {selectedOption && (

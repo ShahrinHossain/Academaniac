@@ -2,7 +2,6 @@ from flask import Flask, request, render_template, redirect, session, jsonify, r
 from flask_mail import Mail
 
 from auth import auth
-from profile import profile
 from security import security
 from models import db
 
@@ -23,7 +22,6 @@ app.secret_key = 'secret_key'
 
 app.register_blueprint(auth, url_prefix="/auth")
 app.register_blueprint(security, url_prefix="/security")
-app.register_blueprint(profile, url_prefix="/profile")
 
 
 with app.app_context():

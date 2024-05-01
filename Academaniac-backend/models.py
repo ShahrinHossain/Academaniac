@@ -38,17 +38,13 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(100), unique=True)
     password_hash = db.Column(db.String(100))
-    role_id = db.Column(db.Integer, db.ForeignKey('role.id'), nullable=False)
-    name = db.Column(db.String)
-    contact = db.Column(db.String)
+    role_id = db.Column(db.Integer, nullable=False)
     verified = db.Column(db.Integer)
 
     def __init__(self, email, password, role_id, name="Shreya", contact="01552393972"):
         self.email = email
         self.password_hash = generate_password_hash(password)
-        self.role_id = role_id
-        self.name = name
-        self.contact = contact
+        self.role_id = 0
         self.verified = 0
 
     def update_password(self, new_password):
@@ -73,3 +69,14 @@ class Verification(db.Model):
     def update_code(self, code, timestamp=datetime.now()):
         self.code = code
         self.timestamp = timestamp
+
+
+class University(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100))
+    rank = db.Column(db.Integer)
+
+    def __init__(self, name, rank=-1):
+        self.name = name
+        self.rank = rank
+

@@ -56,6 +56,7 @@ const App = () => {
             path="details"
             element={
               <>
+                <Navbar />
                 <DetailedView />
               </>
             }

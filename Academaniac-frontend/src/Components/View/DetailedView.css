@@ -1,16 +1,18 @@
-.detailed-view {
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  margin: 20px auto;
-  max-width: 600px; /* Adjust as needed */
+.custom-link {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid #007bff; /* Blue border */
+  border-radius: 5px;
+  text-decoration: none;
+  color: #007bff; /* Blue text to match the border */
+  background-color: transparent; /* Transparent background by default */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
 }
 
-.container {
-  margin: 10px;
-  padding: 10px;
+.custom-link:hover {
+  background-color: #add8e6; /* Light blue background on hover */
+  color: #000; /* Black text on hover */
 }
-
-.detailed-view h1 {
-  margin-bottom: 10px;
+.header-details {
+  margin-top: 50px; /* Adjust this value to move the heading more or less */
 }

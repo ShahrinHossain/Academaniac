@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import "./DetailedView.css";
 import { useLocation } from "react-router-dom";
 
 const DetailedView = () => {
@@ -17,42 +17,16 @@ const DetailedView = () => {
         padding: "20px",
       }}
     >
-      <h1>Details</h1>
+      <h1 className="header-details">Details</h1>
       {/* Display details using passedResult */}
       <p>Name: {passedResult.name}</p>
       <p>Country: {passedResult.country}</p>
       <a
-        className="btn btn-primary"
-        href={passedResult.web_pages[0]}
-        style={{
-          textDecoration: "none",
-          margin: "10px 0",
-          padding: "10px 20px",
-          borderRadius: "5px",
-          transition: "all 0.3s",
-          display: "inline-block",
-          position: "relative",
-          overflow: "hidden",
-          zIndex: "1",
-          color: "#fff",
-          backgroundColor: "#007bff",
-          border: "1px solid #007bff",
-        }}
-      >
-        <span style={{ position: "relative", zIndex: "2" }}>Visit Site</span>
-        <span
-          style={{
-            position: "absolute",
-            zIndex: "1",
-            backgroundColor: "#fff",
-            width: "100%",
-            height: "100%",
-            top: "0",
-            left: "0",
-            transform: "scale(0)",
-            transition: "transform 0.3s",
-          }}
-        ></span>
+  className="custom-link"
+  href={passedResult.web_pages[0]}
+>
+  Visit Site
+
       </a>
       {/* Access other properties similarly */}
     </div>

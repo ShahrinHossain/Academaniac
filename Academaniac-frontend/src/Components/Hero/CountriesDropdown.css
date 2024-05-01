@@ -8,7 +8,7 @@
   background-color: #b7cbca; /* Light green background color */
   border: 1px solid #000000; /* Default border */
   border-radius: 4px; /* Default rounded corners */
-  font-size: 1rem; /* Default font size */
+  font-size:x-small /* Default font size */
 }
 
 .amriccha select {

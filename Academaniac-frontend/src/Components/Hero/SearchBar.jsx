@@ -5,7 +5,9 @@ import { FaSearch } from "react-icons/fa";
 const SearchBar = ({ setResults }) => {
   const [input, setInput] = useState("");
   const fetchData = (value) => {
-    fetch("https://jsonplaceholder.typicode.com/users")
+    let link =
+      `http://universities.hipolabs.com/search?name=` + value + `&limit=10`;
+    fetch(link)
       .then((response) => response.json())
       .then((json) => {
         const results = json.filter((user) => {

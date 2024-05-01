@@ -1,0 +1,34 @@
+.search-results-table {
+    margin-top: 20px; /* Adjust as needed */
+  }
+  
+  .search-results-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .search-results-table th, .search-results-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .search-results-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .search-results-table tbody tr:hover {
+    background-color: #f2f2f2;
+  }
+  
+  .search-results-table button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  
+  .search-results-table button:hover {
+    background-color: #0056b3;
+  }
+  

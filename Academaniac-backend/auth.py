@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, session, request, render_template, render_template_string, url_for, redirect
-from models import User, Role, Verification, db
+from models import User, Verification, db
 from flask_mail import Mail, Message
 import random
 import string
@@ -39,25 +39,70 @@ def login():
     data = request.json
     email = data.get('email')
     password = data.get('password')
-    print(email)
-    print(password)
 
     user = User.query.filter_by(email=email).first()
 
-    # if user and user.check_password(password):
-    if user:
+    if user and user.check_password(password):
         if user.verified:
             session['email'] = user.email
             session['role'] = user.role_id
             session['id'] = user.id
-            role = Role.query.filter_by(id=user.role_id).first()  # Changed role_id to id
-            session['permissions'] = role.get_permissions()
+            # role = Role.query.filter_by(id=user.role_id).first()  # Changed role_id to id
             print('logged IN')
             return jsonify({"success": True, "message": "Successfully logged In"}), 201
         else:
             return jsonify({"success": True, "message": "Need to verify account"}), 202
     else:
-        return jsonify({"success": False, "message": "Login Failed"}), 401
+        return jsonify({"success": False, "message": "Email and password didn't match"}), 401
+
+
+@auth.route('/register', methods=['POST'])
+def register():
+    data = request.json
+    email = data.get('email')
+    password = data.get('password')
+    # name = data.get('')
+    # contact = data.get('contact')
+    # password = "12345678"
+
+    new_user = User(email=email, password=password, role_id=0)
+
+    existing_user = User.query.filter_by(email=new_user.email).first()
+
+    if existing_user:
+        response_data = {
+            "success": "False",
+            "message": "There's already an account registered with this email"
+        }
+
+        return jsonify(response_data), 409
+
+    else:
+        endpoint2_url = url_for('auth.send_mail', _external=True)
+        response = requests.post(endpoint2_url, json={'email': email})
+        if response.status_code // 100 == 2:
+            data = response.json()
+            code = data.get('code')
+            otp = Verification.query.filter_by(email=email).first()
+            if otp:
+                otp.update_code(code, datetime.now())
+                db.session.commit()
+            else:
+                otp = Verification(email, code, datetime.now())
+                db.session.add(otp)
+                db.session.commit()
+            # otp = Verification(email, code, datetime.now())
+            # db.session.add(otp)
+            db.session.add(new_user)
+            db.session.commit()
+
+            response_data = {
+                "success": "True",
+                "message": "Registration Success: Please Check Email for verification code"
+            }
+            return jsonify(response_data), 201
+        else:
+            return jsonify({"success": False, "message": "Failed to send email"}), response.status_code
 
 
 @auth.route('/mail', methods=['POST'])
@@ -197,4 +242,3 @@ def logout():
 
     else:
         return jsonify({"success": False, "message": "Need to login first"}), 400
-

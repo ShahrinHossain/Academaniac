@@ -1,0 +1,16 @@
+.detailed-view {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 20px auto;
+  max-width: 600px; /* Adjust as needed */
+}
+
+.container {
+  margin: 10px;
+  padding: 10px;
+}
+
+.detailed-view h1 {
+  margin-bottom: 10px;
+}

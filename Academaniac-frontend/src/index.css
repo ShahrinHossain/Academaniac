@@ -23,6 +23,9 @@ a {
   padding-right: 10%;
 }
 
+.home {
+  padding: 0px;
+}
 .btn {
   background-color: #fff;
   color: #212121;

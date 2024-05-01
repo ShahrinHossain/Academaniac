@@ -5,7 +5,7 @@ import {SearchResult} from "./SearchResult";
 const SearchResultsTable = ({ results }) => {
   return (
     <div className="search-results-table">
-      <table>
+      {/* <table>
         <thead>
           <tr>
             <th>Name</th>
@@ -13,8 +13,17 @@ const SearchResultsTable = ({ results }) => {
             <th>Action</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody> */}
           {results.map((result) => (
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Country</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
             <tr key={result.id}>
               <td>{result.name}</td>
               <td>{result.country}</td>
@@ -22,9 +31,9 @@ const SearchResultsTable = ({ results }) => {
               <button onClick={() => handleView(result.web_pages)}>View</button>
               </td>
             </tr>
-          ))}
-        </tbody>
+            </tbody>
       </table>
+          ))}
     </div>
   );
 };

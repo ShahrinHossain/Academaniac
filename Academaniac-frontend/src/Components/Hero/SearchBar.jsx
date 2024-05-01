@@ -18,6 +18,7 @@ const SearchBar = ({ setResults }) => {
             user.name.toLowerCase().includes(value)
           );
         });
+        // Pass results to parent component using setResults prop
         setResults(results);
       });
   };

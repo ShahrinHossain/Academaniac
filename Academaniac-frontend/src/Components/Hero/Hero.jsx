@@ -5,6 +5,7 @@ import SearchResultsList from "./SearchResultsList";
 
 const Hero = () => {
   const [results, setResults] = useState([]);
+  const [searchBarContent, setSearchBarContent] = useState("");
 
   return (
     <div className="hero container">

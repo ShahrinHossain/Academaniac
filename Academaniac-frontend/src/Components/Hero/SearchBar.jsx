@@ -152,11 +152,11 @@ const SearchBar = ({ setResults }) => {
       <FaSearch id="search-icon" />
       <div className="bundle">
         <input
-          placeholder="Type to Search..."
+          placeholder="Type to Search Universities..."
           value={input}
           onChange={(e) => handleChange(e.target.value)}
         />
-        <CountriesDropdown selectedCountry={selectedCountry} setSelectedCountry={setSelectedCountry} />
+        <CountriesDropdown className="amriccha" selectedCountry={selectedCountry} setSelectedCountry={setSelectedCountry} />
       </div>
 
       {/* Display options from search results */}
@@ -171,8 +171,8 @@ const SearchBar = ({ setResults }) => {
       )}
       {/* Submit button */}
       <button className="submit-button" onClick={handleSubmit}>
-        Search
-      </button>
+  Search
+</button>
     </div>
   );
 };

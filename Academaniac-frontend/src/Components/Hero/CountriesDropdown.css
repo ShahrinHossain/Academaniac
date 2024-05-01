@@ -1,28 +1,38 @@
-/* option {
-  width: 5px;
-  border: 0;
-}
-select {
-  width: 5px;
-  border: 0;
-} */
-
-/* Resetting default dropdown styles (optional) */
-select {
-  appearance: none; /* Remove default dropdown styling */
-  padding: 7px 10px; /* Add some padding */
-  border: 1px solid #ddd; /* Add a border */
-  border-radius: 4px; /* Rounded corners */
-  font-size: 1rem; /* Adjust font size */
+/* Apply styles based on the className passed */
+.amriccha {
+  display: flex; /* Enable flexbox for sizing */
+  align-items: center; /* Align content vertically */
+  justify-content: center; /* Center content horizontally */
+  width: 150px; /* Adjust width to your preference */
+  height: 35px; /* Adjust height to your preference */
+  background-color: #e0fbf2; /* Light green background color */
+  border: 1px solid #ddd; /* Default border */
+  border-radius: 4px; /* Default rounded corners */
+  font-size: 1rem; /* Default font size */
 }
 
-select:focus {
+.amriccha select {
+  /* Remove default styles for better control */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none; /* Remove border as it's handled by the container */
+  padding: 10px 15px; /* Adjust padding if needed */
+  font-family: inherit; /* Inherit font family from parent */
+  font-size: inherit; /* Inherit font size from parent */
+  color: #333; /* Text color */
+  background-color: transparent; /* Transparent background */
+  /* Optional: Set width to 100% to fill container (adjust padding if needed) */
+  width: 100%; 
+}
+
+/* Resetting default dropdown styles */
+.amriccha select:focus {
   outline: none; /* Remove outline on focus */
-  border-color: palevioletred; /* Change border color on focus */
 }
 
 /* Optional styling for the caret (down arrow) */
-select::-ms-expand-downarrow {
+.amriccha select::-ms-expand-downarrow {
   /* Replace with desired caret image or styling */
   /* Example using Font Awesome */
   content: "\f078"; /* Font Awesome caret down icon */

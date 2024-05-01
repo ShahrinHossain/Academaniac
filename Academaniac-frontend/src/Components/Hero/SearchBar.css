@@ -38,13 +38,22 @@ input:focus {
   align-items: center;
 }
 
+.bundle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 input {
   background-color: transparent;
+  flex: 1;
   border: none;
   height: 100%;
   font-size: 1.25rem;
   width: 100%;
   margin-left: 5px;
+  margin-right: 10px;
 }
 
 input:focus {

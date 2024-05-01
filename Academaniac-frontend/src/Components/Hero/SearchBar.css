@@ -13,10 +13,11 @@
 }
 
 .bundle {
-  width: 90%; /* Decreased the width of the bundle container */
-  display: flex;
+  display: flex; /* Ensure flexbox is enabled */
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;/* Distribute elements horizontally */
+  margin-right: 10px; /* Add margin to the right for spacing */
+  
 }
 
 .CountriesDropdown {
@@ -67,9 +68,14 @@ input:focus {
 }
 
 .submit-button {
-  background-color: #007bff; /* Blue button (assuming you don't need to change this) */
-  border-color: #007bff; /* Blue border (assuming you don't need to change this) */
-  color: white; /* White text (assuming you don't need to change this) */
+  /* Existing styles... */
+  background-color: #2e8b57; /* Dark green background color */
+  padding: 10px 20px; /* Increase padding for larger size */
+  font-size: 16px; /* Increase font size (optional) */
+  border: none; /* Remove border if needed */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Indicate clickable button */
+  justify-content: flex-end;
 }
 
 .submit-button:hover {

@@ -7,16 +7,7 @@ const SearchResultsTable = ({ results }) => {
 
   return (
     <div className="search-results-table">
-      {/* <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Country</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody> */}
-      {results.map((result) => (
+      {results.length > 0 && (
         <table>
           <thead>
             <tr>
@@ -26,25 +17,18 @@ const SearchResultsTable = ({ results }) => {
             </tr>
           </thead>
           <tbody>
-            <tr key={result.id}>
-              <td>{result.name}</td>
-              <td>{result.country}</td>
-              <td>
-                <button
-                  // onClick={() => (navigteTo(`/details`), console.log(result))}
-                  onClick={() =>
-                    navigateTo(`/details`, {
-                      state: { result },
-                    })
-                  }
-                >
-                  View
-                </button>
-              </td>
-            </tr>
+            {results.map((result) => (
+              <tr key={result.id}>
+                <td>{result.name}</td>
+                <td>{result.country}</td>
+                <td>
+                <button onClick={() => handleView(result.web_pages)}>View</button>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
-      ))}
+      )}
     </div>
   );
 };

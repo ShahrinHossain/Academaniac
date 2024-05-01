@@ -5,10 +5,10 @@
   justify-content: center; /* Center content horizontally */
   width: 150px; /* Adjust width to your preference */
   height: 35px; /* Adjust height to your preference */
-  background-color: #e0fbf2; /* Light green background color */
-  border: 1px solid #ddd; /* Default border */
+  background-color: #b7cbca; /* Light green background color */
+  border: 1px solid #000000; /* Default border */
   border-radius: 4px; /* Default rounded corners */
-  font-size: 1rem; /* Default font size */
+  font-size:x-small /* Default font size */
 }
 
 .amriccha select {

@@ -39,10 +39,11 @@ const CountriesDropdown = ({ selectedCountry, setSelectedCountry }) => {
   style={{
     width: "150px",
     height: "35px",
-    backgroundColor: "#e0fbf2",
+    backgroundColor: "#b7cbca",
     padding: "10px 15px",
     border: "1px solid #ddd",
-    borderRadius: "4px",
+    borderRadius: "10px",
+    fontSize: "small",
   }}
 >
         {countries.map((country, index) => (

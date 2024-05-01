@@ -13,15 +13,14 @@
 }
 
 .bundle {
-  display: flex; /* Ensure flexbox is enabled */
+  width: 90%; /* Decreased the width of the bundle container */
+  display: flex;
   align-items: center;
-  justify-content: flex-end;/* Distribute elements horizontally */
-  margin-right: 10px; /* Add margin to the right for spacing */
-  
+  justify-content: space-between;
 }
 
 .CountriesDropdown {
-  width: 20px; /* Decreased the width of the country dropdown */
+  width: 60px; /* Decreased the width of the country dropdown */
 }
 
 /* Adjusted the width of the input to maintain consistency */
@@ -60,7 +59,7 @@ input:focus {
 .search-results li {
   padding: 10px;
   cursor: pointer;
-  color: #333; 
+  color: #333; /* Darken font color */
 }
 
 .search-results li:hover {
@@ -68,17 +67,16 @@ input:focus {
 }
 
 .submit-button {
-  /* Existing styles... */
-  background-color: #2e8b57; /* Dark green background color */
-  padding: 10px 20px; /* Increase padding for larger size */
-  font-size: 16px; /* Increase font size (optional) */
-  border: none; /* Remove border if needed */
-  border-radius: 4px; /* Rounded corners */
-  cursor: pointer; /* Indicate clickable button */
-  justify-content: flex-end;
+  background-color: #229ec4; /* Blue button (assuming you don't need to change this) */
+  border-color: #c3e0ff; /* Blue border (assuming you don't need to change this) */
+  color: white; /* White text (assuming you don't need to change this) */
+  margin-left: 10px;
+  border-radius: 10px;
+  padding: 8px 30px; /* Increase padding values for larger size */
+  
 }
 
 .submit-button:hover {
-  background-color: #0067cc; /* Darker blue on hover (assuming you don't need to change this) */
-  border-color: #0067cc; /* Darker blue border on hover (assuming you don't need to change this) */
+  background-color: #000000; /* Darker blue on hover (assuming you don't need to change this) */
+  border-color: #000000; /* Darker blue border on hover (assuming you don't need to change this) */
 }

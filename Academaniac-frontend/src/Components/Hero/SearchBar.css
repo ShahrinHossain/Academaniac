@@ -21,7 +21,7 @@
 }
 
 .CountriesDropdown {
-  width: 60px; /* Decreased the width of the country dropdown */
+  width: 20px; /* Decreased the width of the country dropdown */
 }
 
 /* Adjusted the width of the input to maintain consistency */
@@ -60,7 +60,7 @@ input:focus {
 .search-results li {
   padding: 10px;
   cursor: pointer;
-  color: #333; /* Darken font color */
+  color: #333; 
 }
 
 .search-results li:hover {

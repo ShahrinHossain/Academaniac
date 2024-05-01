@@ -1,8 +1,35 @@
-option {
+/* option {
   width: 5px;
   border: 0;
 }
 select {
   width: 5px;
   border: 0;
+} */
+
+/* Resetting default dropdown styles (optional) */
+select {
+  appearance: none; /* Remove default dropdown styling */
+  padding: 7px 10px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a border */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 1rem; /* Adjust font size */
+}
+
+select:focus {
+  outline: none; /* Remove outline on focus */
+  border-color: palevioletred; /* Change border color on focus */
+}
+
+/* Optional styling for the caret (down arrow) */
+select::-ms-expand-downarrow {
+  /* Replace with desired caret image or styling */
+  /* Example using Font Awesome */
+  content: "\f078"; /* Font Awesome caret down icon */
+  font-family: FontAwesome; /* Use your font family */
+  color: #333; /* Adjust caret color */
+  position: absolute;
+  right: 10px; /* Adjust caret position */
+  top: 50%;
+  transform: translateY(-50%); /* Center caret vertically */
 }

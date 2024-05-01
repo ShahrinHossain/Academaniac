@@ -1,5 +1,5 @@
 .search-results-table {
-    margin-top: 20px; /* Adjust as needed */
+    margin-top: 30px; /* Adjust as needed */
   }
   
   .search-results-table table {
@@ -13,11 +13,13 @@
   }
   
   .search-results-table th {
-    background-color: #f2f2f2;
+    background-color: #e0e0e0; /* Changed to a light gray */
+    color: #000000;
   }
   
   .search-results-table tbody tr:hover {
-    background-color: #f2f2f2;
+    background-color: rgba(242, 242, 242, 0.6); /* Light gray with increased opacity */
+    color:#000000;
   }
   
   .search-results-table button {

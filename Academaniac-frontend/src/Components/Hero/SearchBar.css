@@ -1,57 +1,35 @@
-/* .input-wrapper {
-  background-color: white;
-  width: 100%;
-  border-radius: 10px;
-  height: 2.5rem;
-  padding: 0 15px;
-  box-shadow: 0px 0px 8px #ddd;
-  display: flex;
-  align-items: center;
-}
-
-input {
-  background-color: transparent;
-  border: none;
-  height: 100%;
-  font-size: 1.25rem;
-  width: 100%;
-  margin-left: 5px;
-}
-
-input:focus {
-  outline: none;
-}
-
-#search-icon {
-  color: royalblue;
-} */
-
 .input-wrapper {
   position: relative;
-  background-color: white;
-  width: 100%;
+  background-color: #e8f0f7; /* Light green background */
+  width: 150%; /* Maintains full width */
   border-radius: 10px;
-  height: 2.5rem;
-  padding: 0 15px;
+  height: calc(2.5rem * 1.5); /* Increased height by 1.5x */
+  padding: 0 25px 0 15px; /* Adjusted padding on the right side */
   box-shadow: 0px 0px 8px #ddd;
   display: flex;
   align-items: center;
+  margin: 0 auto; /* Center horizontally */
+  margin-left: -20%; /* Decreased left margin */
 }
 
 .bundle {
-  width: 100%;
+  width: 90%; /* Decreased the width of the bundle container */
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+.CountriesDropdown {
+  width: 20px; /* Decreased the width of the country dropdown */
+}
+
+/* Adjusted the width of the input to maintain consistency */
 input {
   background-color: transparent;
-  flex: 1;
+  flex: 1; /* Fills most of the available space */
   border: none;
   height: 100%;
-  font-size: 1.25rem;
-  width: 100%;
+  width: calc(100% - 140px); /* Adjusted width considering the dropdown */
   margin-left: 5px;
   margin-right: 10px;
 }
@@ -81,9 +59,20 @@ input:focus {
 .search-results li {
   padding: 10px;
   cursor: pointer;
-  color: #333; /* Darken font color */
+  color: #333; 
 }
 
 .search-results li:hover {
   background-color: #f0f0f0;
+}
+
+.submit-button {
+  background-color: #007bff; /* Blue button (assuming you don't need to change this) */
+  border-color: #007bff; /* Blue border (assuming you don't need to change this) */
+  color: white; /* White text (assuming you don't need to change this) */
+}
+
+.submit-button:hover {
+  background-color: #0067cc; /* Darker blue on hover (assuming you don't need to change this) */
+  border-color: #0067cc; /* Darker blue border on hover (assuming you don't need to change this) */
 }

@@ -22,7 +22,7 @@ const Hero = () => {
   return (
     <div className="hero-container">
       <div className="hero-text">
-        <h1>Your Ultimate Study Abroad Guide</h1>
+        
         <SearchBar
           setResults={setResults}
           setSelectedOption={setSelectedOption}

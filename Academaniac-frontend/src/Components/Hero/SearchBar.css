@@ -1,4 +1,4 @@
-.input-wrapper {
+/* .input-wrapper {
   background-color: white;
   width: 100%;
   border-radius: 10px;
@@ -24,4 +24,57 @@ input:focus {
 
 #search-icon {
   color: royalblue;
+} */
+
+.input-wrapper {
+  position: relative;
+  background-color: white;
+  width: 100%;
+  border-radius: 10px;
+  height: 2.5rem;
+  padding: 0 15px;
+  box-shadow: 0px 0px 8px #ddd;
+  display: flex;
+  align-items: center;
+}
+
+input {
+  background-color: transparent;
+  border: none;
+  height: 100%;
+  font-size: 1.25rem;
+  width: 100%;
+  margin-left: 5px;
+}
+
+input:focus {
+  outline: none;
+}
+
+#search-icon {
+  color: royalblue;
+}
+
+.search-results {
+  position: absolute;
+  top: calc(100% + 10px); /* Add some space between input and dropdown */
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 8px #ddd;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 1;
+}
+
+.search-results li {
+  padding: 10px;
+  cursor: pointer;
+  color: #333; /* Darken font color */
+}
+
+.search-results li:hover {
+  background-color: #f0f0f0;
 }

@@ -5,7 +5,6 @@ import {SearchResult} from "./SearchResult";
 const SearchResultsTable = ({ results }) => {
   return (
     <div className="search-results-table">
-      <h2>Search Results</h2>
       <table>
         <thead>
           <tr>

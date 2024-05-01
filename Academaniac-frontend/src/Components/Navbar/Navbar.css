@@ -22,3 +22,18 @@ nav ul li {
   margin: 5px 20px;
   font-size: 16px;
 }
+.nav-button {
+  background-color: rgba(255, 255, 255, 0.8); /* Opaque white background */
+  color: #333; /* Dark text color for contrast */
+  border: 2px solid #ccc; /* Light grey border */
+  border-radius: 8px; /* Rounded edges */
+  padding: 8px 16px; /* Padding inside the button */
+  font-size: 16px; /* Font size for text */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.nav-button:hover {
+  background-color: rgba(255, 255, 255, 1); /* Fully opaque white on hover */
+  color: white; /* Change text color to white on hover */
+}

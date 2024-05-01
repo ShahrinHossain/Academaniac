@@ -4,7 +4,7 @@ import logo from "../../assets/logo.png";
 
 export const Navbar = () => {
   return (
-    <nav className="container">
+    <nav className="nav-container">
       <img src={logo} alt="Academaniac Logo" className="logo" />
       <ul>
         <li>Home</li>

@@ -1,8 +1,10 @@
 import React from "react";
 import "./SearchResultsTable.css";
-import {SearchResult} from "./SearchResult";
+import { useNavigate } from "react-router-dom";
 
 const SearchResultsTable = ({ results }) => {
+  const navigateTo = useNavigate(); // Get history object
+
   return (
     <div className="search-results-table">
       {/* <table>
@@ -14,7 +16,7 @@ const SearchResultsTable = ({ results }) => {
           </tr>
         </thead>
         <tbody> */}
-          {results.map((result) => (
+      {results.map((result) => (
         <table>
           <thead>
             <tr>
@@ -28,12 +30,21 @@ const SearchResultsTable = ({ results }) => {
               <td>{result.name}</td>
               <td>{result.country}</td>
               <td>
-              <button onClick={() => handleView(result.web_pages)}>View</button>
+                <button
+                  // onClick={() => (navigteTo(`/details`), console.log(result))}
+                  onClick={() =>
+                    navigateTo(`/details`, {
+                      state: { result },
+                    })
+                  }
+                >
+                  View
+                </button>
               </td>
             </tr>
-            </tbody>
-      </table>
-          ))}
+          </tbody>
+        </table>
+      ))}
     </div>
   );
 };

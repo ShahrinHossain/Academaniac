@@ -12,13 +12,15 @@ const Hero = () => {
   const handleViewButtonClick = () => {
     // Handle the action when the "View" button is clicked
     if (selectedOption) {
-      console.log("View button clicked for:", selectedOption);
+      // console.log("View button clicked for: ", selectedOption.name);
+      console.log("gg");
+      window.location.href = selectedOption.web_pages;
       // Perform any desired action, such as navigation or displaying additional information
     }
   };
 
   return (
-    <div className="hero container">
+    <div className="hero-container">
       <div className="hero-text">
         
         <SearchBar

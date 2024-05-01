@@ -1,4 +1,18 @@
-.hero {
+/* .hero {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(rgba(17, 17, 21, 0.7), rgba(17, 17, 21, 0.7)),
+    url("../../assets/bg.jpg");
+
+  background-size: cover;
+  background-position-x: 0%;
+  background-position-y: 60%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+.hero-container {
   width: 100%;
   min-height: 100vh;
   background: linear-gradient(rgba(17, 17, 21, 0.7), rgba(17, 17, 21, 0.7)),

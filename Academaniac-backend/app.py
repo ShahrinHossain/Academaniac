@@ -5,6 +5,7 @@ from auth import auth
 from security import security
 from models import db
 
+
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['MAIL_SERVER'] = 'smtp.googlemail.com'

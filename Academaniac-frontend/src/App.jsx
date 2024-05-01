@@ -26,6 +26,8 @@ import Hero from "./Components/Hero/Hero.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import DetailedView from "./Components/View/DetailedView.jsx";
 import NoPage from "./Components/View/NoPage.jsx";
+import LoginPage from "./Components/View/LoginPage.jsx";
+import SignUpPage from "./Components/View/SignUpPage.jsx";
 
 const App = () => {
   return (
@@ -59,6 +61,8 @@ const App = () => {
             }
           />
           <Route path="*" element={<NoPage />} />
+          <Route path="login" element={<LoginPage />} />
+          <Route path="signup" element={<SignUpPage />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -6,9 +6,12 @@ import string
 import requests
 import re
 from datetime import datetime
+from flask_cors import CORS
 
 mail = Mail()
 
+
+# ... other imports in auth.py .
 
 def is_valid_email(email):
     # Regular expression for validating an email address
@@ -34,7 +37,7 @@ def generate_random_string(length=6):
 auth = Blueprint("auth", __name__, static_folder="static", template_folder="templates")
 
 
-@auth.route('/login', methods=['POST'])
+@auth.route('/login', methods=['POST', 'GET'])
 def login():
     data = request.json
     email = data.get('email')
@@ -44,13 +47,12 @@ def login():
 
     if user and user.check_password(password):
         if user.verified:
-            session['email'] = user.email
-            session['role'] = user.role_id
             session['id'] = user.id
             # role = Role.query.filter_by(id=user.role_id).first()  # Changed role_id to id
             print('logged IN')
             return jsonify({"success": True, "message": "Successfully logged In"}), 201
         else:
+            session['id'] = user.id
             return jsonify({"success": True, "message": "Need to verify account"}), 202
     else:
         return jsonify({"success": False, "message": "Email and password didn't match"}), 401
@@ -103,6 +105,17 @@ def register():
             return jsonify(response_data), 201
         else:
             return jsonify({"success": False, "message": "Failed to send email"}), response.status_code
+
+
+@auth.route('/@me')
+def get_current_user():
+    user_id = session.get("id")
+    if not user_id:
+        return jsonify({"success": False, "message": "unauthorized"}), 404
+    user = User.query.filter_by(id=user_id).first()
+    if not user:
+        return jsonify({"success": False, "message": "user not found"}), 404
+    return jsonify({"success": True, "message": user.email}), 201
 
 
 @auth.route('/mail', methods=['POST'])
@@ -218,8 +231,6 @@ def login_verification():
             session['email'] = user.email
             session['role'] = user.role_id
             session['id'] = user.id
-            role = Role.query.filter_by(id=user.role_id).first()
-            session['permissions'] = role.get_permissions()
             return jsonify({"success": True, "message": "User Verified"}), 201
         else:
             return jsonify({"success": False, "message": "Verification code didn't match"}), 401

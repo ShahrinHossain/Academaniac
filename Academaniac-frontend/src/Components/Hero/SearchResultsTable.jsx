@@ -20,7 +20,7 @@ const SearchResultsTable = ({ results }) => {
               <td>{result.name}</td>
               <td>{result.country}</td>
               <td>
-                <button onClick={() => console.log("View button clicked for:", result)}>View</button>
+              <button onClick={() => handleView(result.web_pages)}>View</button>
               </td>
             </tr>
           ))}
@@ -28,6 +28,10 @@ const SearchResultsTable = ({ results }) => {
       </table>
     </div>
   );
+};
+
+const handleView = (url) => {
+  window.location.href = url; // Assuming result has an 'id' property
 };
 
 export default SearchResultsTable;

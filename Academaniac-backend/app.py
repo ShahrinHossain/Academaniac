@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template, redirect, session, jsonify, render_template_string
 from flask_mail import Mail
+from flask_cors import CORS, cross_origin
 
 from auth import auth
 from security import security
@@ -15,7 +16,7 @@ app.config['MAIL_PASSWORD'] = 'wbrlyrvjaeqgybcs'
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
 
-
+CORS(app, supports_creedentials=True)
 db.init_app(app)
 mail = Mail(app)
 app.secret_key = 'secret_key'

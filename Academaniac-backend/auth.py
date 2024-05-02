@@ -6,7 +6,6 @@ import string
 import requests
 import re
 from datetime import datetime
-from flask_cors import CORS
 
 mail = Mail()
 

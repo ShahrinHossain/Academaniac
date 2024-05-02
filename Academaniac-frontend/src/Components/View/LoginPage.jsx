@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 
-const LoginPage = () => {
+const SignUpPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [data, setData] = useState(null); // Updated to handle potential errors
-  const navigate = useNavigate();
+  const navigateTo = useNavigate();
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault(); // Prevent default form submission
@@ -22,17 +22,20 @@ const LoginPage = () => {
         headers: { "Content-Type": "application/json" },
         body: requestBody,
       });
+      console.log(response.status);
 
-      if (!response.ok) {
-        throw new Error(`API request failed with status ${response.status}`);
+      if (response.status === 202) {
+        // throw new Error(`API request failed with status ${response.status}`);
+        navigateTo("/login/first", { state: { email } });
+      } else if (response.status === 201) {
+        // Handle successful signup (redirect to login)
+        navigateTo("/dashboard");
       }
-
-      const responseData = await response.json();
-      setData(responseData);
-      console.log(responseData);
-
-      // Handle successful login (e.g., navigate to a different page)
-      navigate("/dashboard"); // Example navigation
+      //   } else {
+      //     console.log("error");
+      //     const responseData = await response.json();
+      //     console.log("API Response:", responseData); // Print the response for debugging
+      //   }
     } catch (error) {
       console.error("Error:", error);
       // Handle errors appropriately (e.g., display error message to user)
@@ -40,48 +43,43 @@ const LoginPage = () => {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
-        <Form.Label column sm={2}>
-          Email
-        </Form.Label>
-        <Col sm={10}>
-          <Form.Control
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </Col>
-      </Form.Group>
+    <div className="container">
+      <h2>Sign In</h2>
+      <Form onSubmit={handleSubmit}>
+        <Row className="mb-3">
+          <Form.Group as={Col} controlId="formGridEmail">
+            <Form.Label>Email</Form.Label>
+            <Form.Control
+              type="email"
+              placeholder="Enter email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </Form.Group>
 
-      <Form.Group as={Row} className="mb-3" controlId="formHorizontalPassword">
-        <Form.Label column sm={2}>
-          Password
-        </Form.Label>
-        <Col sm={10}>
-          <Form.Control
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </Col>
-      </Form.Group>
-
-      <Form.Group as={Row} className="mb-3" controlId="formHorizontalCheck">
-        <Col sm={{ span: 10, offset: 2 }}>
-          <Form.Check label="Remember me" />
-        </Col>
-      </Form.Group>
-
-      <Form.Group as={Row} className="mb-3">
-        <Col sm={{ span: 10, offset: 2 }}>
-          <Button type="submit">Sign in</Button>
-        </Col>
-      </Form.Group>
-    </Form>
+          <Form.Group as={Col} controlId="formGridPassword">
+            <Form.Label>Password</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </Form.Group>
+        </Row>
+        <br />
+        <br />
+        {errorMessage && <label style={{ color: "red" }}>{errorMessage}</label>}
+        <p>
+          Don't have and account?
+          <a onClick={() => navigateTo("/signup")}>Sign Up</a>
+        </p>
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
+      </Form>
+    </div>
   );
 };
 
-export default LoginPage;
+export default SignUpPage;

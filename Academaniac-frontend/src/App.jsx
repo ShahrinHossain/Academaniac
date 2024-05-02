@@ -28,6 +28,8 @@ import DetailedView from "./Components/View/DetailedView.jsx";
 import NoPage from "./Components/View/NoPage.jsx";
 import LoginPage from "./Components/View/LoginPage.jsx";
 import SignUpPage from "./Components/View/SignUpPage.jsx";
+import FirstLoginPage from "./Components/View/FirstLoginPage.jsx";
+import Dashboard from "./Components/dashboard/Dashboard.jsx";
 
 const App = () => {
   return (
@@ -64,6 +66,8 @@ const App = () => {
           <Route path="*" element={<NoPage />} />
           <Route path="login" element={<LoginPage />} />
           <Route path="signup" element={<SignUpPage />} />
+          <Route path="login/first" element={<FirstLoginPage />} />
+          <Route path="dashboard" element={<Dashboard />} />
         </Routes>
       </BrowserRouter>
     </div>

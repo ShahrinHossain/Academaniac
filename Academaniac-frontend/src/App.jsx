@@ -64,10 +64,10 @@ const App = () => {
             }
           />
           <Route path="*" element={<NoPage />} />
-          <Route path="login" element={<LoginPage />} />
-          <Route path="signup" element={<SignUpPage />} />
-          <Route path="login/first" element={<FirstLoginPage />} />
-          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="login" element={<> <Navbar /> <LoginPage /> </>} />
+          <Route path="signup" element={<> <Navbar /> <SignUpPage /> </>} />
+          <Route path="login/first" element={<> <Navbar /> <FirstLoginPage /> </>} />
+          <Route path="dashboard" element={<> <Navbar /> <Dashboard /> </>} />
         </Routes>
       </BrowserRouter>
     </div>

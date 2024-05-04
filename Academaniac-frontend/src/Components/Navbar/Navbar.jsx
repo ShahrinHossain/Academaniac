@@ -7,9 +7,16 @@ export const Navbar = () => {
   const navigateTo = useNavigate();
   return (
     <nav className="nav-container">
+      <div className="logo-wrapper" onClick={()=>{
+        navigateTo('/')
+      }}>
       <img src={logo} alt="Academaniac Logo" className="logo" />
+      <h4>Academaniac</h4>
+      </div>
       <ul>
-        <li>Home</li>
+        <li><a onClick={()=>{
+          navigateTo('/')
+        }}>Home</a></li>
         <li>Programs</li>
         <li>About Us</li>
         <li>

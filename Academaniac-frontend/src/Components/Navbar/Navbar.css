@@ -37,3 +37,8 @@ nav ul li {
   background-color: rgba(255, 255, 255, 1); /* Fully opaque white on hover */
   color: white; /* Change text color to white on hover */
 }
+
+.logo-wrapper {
+  display: flex; /* Enable Flexbox for horizontal alignment */
+  align-items: center; /* Vertically align items to the center (optional) */
+}

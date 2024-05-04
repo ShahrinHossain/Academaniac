@@ -1,11 +1,12 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./DetailedView.css";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const DetailedView = () => {
   const location = useLocation();
   const passedResult = location.state?.result; // Access result object
+  const navigateTo = new useNavigate();
 
   return (
     <div
@@ -17,17 +18,21 @@ const DetailedView = () => {
         padding: "20px",
       }}
     >
-      <h1 className="header-details">Details</h1>
-      {/* Display details using passedResult */}
-      <p>Name: {passedResult.name}</p>
-      <p>Country: {passedResult.country}</p>
-      <a
-  className="custom-link"
-  href={passedResult.web_pages[0]}
->
-  Visit Site
+      <div className="container-card">
+        <h1 className="header-details">Details</h1>
+        {/* Display details using passedResult */}
+        <p>Name: {passedResult.name}</p>
+        <p>Country: {passedResult.country}</p>
+        <a className="custom-link" href={passedResult.web_pages[0]}>
+          Visit Site
+        </a> <br/> <br/>
+        <a className="add-to-list" onClick={()=>{
+          navigateTo('/login')
+        }}>
+          Add To List
+        </a>
+      </div>
 
-      </a>
       {/* Access other properties similarly */}
     </div>
   );

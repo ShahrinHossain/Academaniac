@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
+import "./LoginPage.css";
 
 const SignUpPage = () => {
   const [email, setEmail] = useState("");
@@ -43,41 +44,45 @@ const SignUpPage = () => {
   };
 
   return (
-    <div className="container">
-      <h2>Sign In</h2>
-      <Form onSubmit={handleSubmit}>
-        <Row className="mb-3">
-          <Form.Group as={Col} controlId="formGridEmail">
-            <Form.Label>Email</Form.Label>
-            <Form.Control
-              type="email"
-              placeholder="Enter email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </Form.Group>
+    <div className="container-login">
+      <div className="login-card">
+        <h2>Sign In</h2>
+        <Form onSubmit={handleSubmit}>
+          <Row className="mb-3">
+            <Form.Group as={Col} controlId="formGridEmail">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="Enter email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </Form.Group>
 
-          <Form.Group as={Col} controlId="formGridPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </Form.Group>
-        </Row>
-        <br />
-        <br />
-        {errorMessage && <label style={{ color: "red" }}>{errorMessage}</label>}
-        <p>
-          Don't have and account?
-          <a onClick={() => navigateTo("/signup")}>Sign Up</a>
-        </p>
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
-      </Form>
+            <Form.Group as={Col} controlId="formGridPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </Form.Group>
+          </Row>
+          <br />
+          <br />
+          {errorMessage && (
+            <label style={{ color: "red" }}>{errorMessage}</label>
+          )}
+          <p>
+            Don't have and account?
+            <a onClick={() => navigateTo("/signup")}>Sign Up</a>
+          </p>
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+        </Form>
+      </div>
     </div>
   );
 };

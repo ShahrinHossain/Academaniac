@@ -63,7 +63,7 @@ const SearchBar = ({ setResults }) => {
   return (
     <div className="search-container">
       {/* Heading before the search bar */}
-      <h2 className="search-bar-heading">Let's Get Started</h2>
+      <h2 className="search-bar-heading">Let's Get Started . . .</h2>
       <div className="input-wrapper">
         <FaSearch id="search-icon" />
         <div className="bundle">

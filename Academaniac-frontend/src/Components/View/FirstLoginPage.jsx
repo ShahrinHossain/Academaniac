@@ -5,6 +5,7 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import { useLocation } from "react-router-dom";
+import "./FirstLoginPage.css";
 
 const FirstLoginPage = ({ email }) => {
   const location = useLocation();
@@ -49,31 +50,33 @@ const FirstLoginPage = ({ email }) => {
   };
 
   return (
-    <div>
-      <h2>Verify Email</h2>
-      <p>Email: {passedEmail}</p> {/* Display the email */}
-      <Form onSubmit={handleSubmit}>
-        {error && <p style={{ color: "red" }}>{error}</p>}{" "}
-        {/* Display error message */}
-        <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
-          <Form.Label column sm={2}>
-            Verification Code
-          </Form.Label>
-          <Col sm={10}>
-            <Form.Control
-              type="text"
-              placeholder="Enter Code"
-              value={code}
-              onChange={(e) => setCode(e.target.value)}
-            />
-          </Col>
-        </Form.Group>
-        <Form.Group as={Row} className="mb-3">
-          <Col sm={{ span: 10, offset: 2 }}>
-            <Button type="submit">Submit Code</Button>
-          </Col>
-        </Form.Group>
-      </Form>
+    <div className="container-flogin">
+      <div className="card-flogin">
+        <h2>Verify Email</h2>
+        <p>Email: {passedEmail}</p> {/* Display the email */}
+        <Form onSubmit={handleSubmit}>
+          {error && <p style={{ color: "red" }}>{error}</p>}{" "}
+          {/* Display error message */}
+          <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
+            <Form.Label column sm={2}>
+              Verification Code
+            </Form.Label> <br/>
+            <Col sm={10}>
+              <Form.Control
+                type="text"
+                placeholder="Enter Code"
+                value={code}
+                onChange={(e) => setCode(e.target.value)}
+              />
+            </Col>
+          </Form.Group>
+          <Form.Group as={Row} className="mb-3">
+            <Col sm={{ span: 10, offset: 2 }}>
+              <Button type="submit">Submit Code</Button>
+            </Col>
+          </Form.Group>
+        </Form>
+      </div>
     </div>
   );
 };

@@ -1,0 +1,117 @@
+.content{
+    width: 75%;
+}
+
+.content--header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.header--title{
+    color: #c1cff6;
+
+}
+
+.header--activity{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-box{
+    background: #b1bdcd;
+    padding: 8px 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.search-box input{
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 5px;
+    outline: none;
+}
+
+.search-box icon{
+    
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+.notify-box{
+    background: #c1cff6;
+    padding: 12px;
+    border-radius: 10px;
+    
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
+}
+
+.notify-box .icon{
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+
+.icon:hover{
+    transform: scale(1.3);
+    cursor: pointer;
+}
+
+.card-container{
+    width: 510px;
+    padding-left: 10px;
+    gap: 20px;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.card{
+    flex: 1;
+    background: #cfabab;
+    background: linear-gradient(rgba(17, 17, 21, 0.7), rgba(17, 17, 21, 0.7)),
+    url("../../assets/library.jpg");
+    background-size: cover;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    transition: 0.5s ease-in-out;
+}
+
+.card:hover{
+    transform: scale(1.04);
+    cursor: pointer;
+}
+
+.card--cover{
+    background: #000000;
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 50px;
+    color: #cfabab;
+
+}
+
+.card--title{
+    background: #cfabab;
+    width: 50%;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #000000;
+    border-radius: 20px;
+}
+

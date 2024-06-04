@@ -8,7 +8,12 @@
 }
 
 body {
-  background: #f5f5f5;
+  /* padding: 20px ;
+  padding-right: 20px; */
+  background: linear-gradient(rgba(17, 17, 21, 0.7), rgba(17, 17, 21, 0.7)),
+    url("./assets/login.jpg");
+    background-size: cover;
+
 }
 
 a {

@@ -1,0 +1,51 @@
+.card-container2{
+    height: 30%;
+    width: 940px;
+    padding-left: 440px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-top: 6.6rem;
+}
+
+.card2{
+    flex: 1;
+    background: #ab8080;
+    background: linear-gradient(rgba(17, 17, 21, 0.7), rgba(17, 17, 21, 0.7)),
+    url("../../assets/community.jpg");
+    background-size: cover;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    transition: 0.5s ease-in-out;
+}
+
+.card2:hover{
+    transform: scale(1.04);
+    cursor: pointer;
+}
+
+.card--cover2{
+    background: #000000;
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 50px;
+    color: #cfabab;
+
+}
+
+.card--title2{
+    background: #cfabab;
+    width: 50%;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #000000;
+    border-radius: 20px;
+}

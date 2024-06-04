@@ -1,0 +1,104 @@
+.edit-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 2rem 2rem; /* Added 60px padding to the top */
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    color: #c1cff6;
+    min-height: 100vh; /* Full height of the viewport */
+  }
+  
+  .edit-profile h4 {
+    margin-bottom: 20px;
+    color: #c1cff6;
+  }
+  
+  .edit-profile-form {
+    padding-top: 80px;
+    width: 100%;
+    max-width: 600px; /* Set a maximum width for the form */
+  }
+  
+  .edit-profile-form form > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1 1 45%; /* Make each input container take up 45% of the width */
+  }
+  
+  .edit-profile-form form label {
+    gap: 1rem;
+    font-size: 1rem;
+    color: #c1cff6;
+  }
+  
+  .edit-profile-form form input[type="text"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #c1cff6;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    color: #000;
+  }
+  
+  .edit-profile-form form button {
+    padding: 7px ; /* Added padding to the button */
+    font-size: 1rem;
+    background-color: #c1cff6;
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    width: 40%; /* Set button width to 100% */
+    
+  }
+  
+  .edit-profile-form form button:hover {
+    background-color: #000;
+    color: #c1cff6;
+    transform: scale(1.1);
+  }
+  
+  .edit-profile-form form input[type="file"] {
+    display: none; /* Hide the file input */
+  }
+  
+  .save-changes-button {
+    
+    /* margin-top: 20px; */
+    position: absolute; /* Position the "Save Changes" button */
+    top: 78px; /* Adjust top position */
+    right: 465px; 
+   
+    width: 100%;
+    max-width: 150px; /* Set a maximum width for the button */
+  }
+  
+  .save-changes-button button  {
+    padding: 5px;
+    font-size: 1rem;
+    background-color: #040404;
+    color: #a9b6d7;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    width: 100%;
+  }
+
+  .save-changes-button button:hover{
+    background-color: #c1cff6;
+    color: #000;
+    transform: scale(1.1);
+  }
+  
+  .edit-form-name{
+    position: absolute; /* Position the "Save Changes" button */
+    top: 78px; /* Adjust top position */
+    left: 460px; 
+  }

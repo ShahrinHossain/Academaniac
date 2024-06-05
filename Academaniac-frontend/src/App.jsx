@@ -36,7 +36,6 @@ import Terms from "./Components/Navbar/Terms.jsx";
 import CV from "./Components/Navbar/CV.jsx";
 import SOP from "./Components/Navbar/SOP.jsx";
 import FindUniversities from "./Components/View/FindUniversities.jsx";
-import FindUniContent from "./Components/View/FindUniContent.jsx";
 
 const App = () => {
   return (

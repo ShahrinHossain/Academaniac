@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import ProfileHeader from "./ProfileHeader";
 import axios from "axios";
 import "./Profile.css";
+import defaultUserImage from "../../../../Academaniac-backend/res/images/profile_photos/Screenshot_2024-06-02_142317.png";
 import {
   BiSolidGraduation,
   BiPaperPlane,
@@ -11,27 +12,29 @@ import {
 } from "react-icons/bi";
 
 const Profile = () => {
-  const [userData, setUserData] = useState({}); // State to store user data from API
-  const [name, setName] = useState(""); // State to store user name
-  const baseUrl = "../../../../Academaniac-backend/"; // Assuming your backend API base URL
+  const [userData, setUserData] = useState({});
+  const [name, setName] = useState("");
+  const [photoUrl, setPhotoUrl] = useState(defaultUserImage); // Set default image
+  const baseUrl = "http://localhost:5000/"; // Your backend API base URL
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/user/", {
+        const response = await axios.get(`${baseUrl}user/`, {
           headers: {
             "Content-Type": "application/json",
           },
-          withCredentials: true, // Include credentials for authentication
+          withCredentials: true,
         });
 
         if (response.data.success) {
+          const { name, university, country, cgpa, gre, photo, profession } =
+            response.data;
           setUserData(response.data);
-          setName(response.data.name); // Update user name based on response
+          setName(name);
+          setPhotoUrl(photo ? `${baseUrl}${photo}` : defaultUserImage); // Use photo from API or default
 
-          // Update info array based on response data
           const updatedInfo = info.map((item) => {
-            const { university, cgpa, gre, country, photo } = response.data;
             switch (item.id) {
               case 1:
                 return { ...item, title: university };
@@ -40,23 +43,21 @@ const Profile = () => {
               case 3:
                 return { ...item, title: `CGPA: ${cgpa}` };
               case 4:
-                return { ...item, title: `GRE: ${gre || "N/A"}` }; // Handle missing GRE
+                return { ...item, title: `GRE: ${gre || "N/A"}` };
               default:
                 return item;
             }
           });
-          setInfo(updatedInfo); // Update info state with modified data
+          setInfo(updatedInfo);
         } else {
           console.error("Error fetching user data:", response.data.message);
-          // Handle error (e.g., display an error message to the user)
         }
       } catch (error) {
         console.error("Error fetching user data:", error);
-        // Handle error (e.g., display an error message to the user)
       }
     };
 
-    fetchData(); // Fetch data on component mount
+    fetchData();
   }, []); // Empty dependency array to fetch data only once
 
   const [info, setInfo] = useState([
@@ -82,16 +83,14 @@ const Profile = () => {
     },
   ]);
 
-  // Define photoUrl outside of useEffect (assuming baseUrl is set)
-  const photoUrl = `${baseUrl}${userData.photo}`; // Concatenate base URL and photo
-  console.log(photoUrl);
+  console.log(defaultUserImage);
+
   return (
     <div className="profile">
       <ProfileHeader />
       <div className="user--profile">
         <div className="user--detail">
-          <img src={photoUrl || userImage} alt="" />{" "}
-          {/* Use photo from response or default */}
+          <img src={defaultUserImage} alt="User Profile" />
           <h5 className="username">{name}</h5>
           <span className="profession">
             {userData.profession || "Undergraduate"}

@@ -1,12 +1,16 @@
 .search-results-table {
+ 
+  width: 100%;
   overflow-y: auto;
   position: relative;
+  
   height: 300px;
   margin-top: 30px;
      /* Adjust as needed */
   }
   
   .search-results-table table {
+    border-radius: 10px;
     width: 100%;
     border-collapse: collapse;
   }
@@ -18,26 +22,31 @@
   
   .search-results-table th {
     position: sticky;
+    
     top: 10;
     z-index: 1;
     background-color: #e0e0e0; /* Changed to a light gray */
-    color: #000000;
+    color: #456f7b;
   }
   
   .search-results-table tbody tr:hover {
     background-color: rgba(242, 242, 242, 0.6); /* Light gray with increased opacity */
     color:#000000;
+
   }
   
   .search-results-table button {
-    background-color: #007bff;
+    background-color: #5c91a1;
     color: white;
     border: none;
+    border-radius: 10px;
     padding: 8px 12px;
     cursor: pointer;
   }
   
   .search-results-table button:hover {
-    background-color: #0056b3;
+    background-color: #000000; /* Darker blue on hover (assuming you don't need to change this) */
+  border-color: #000000; /* Darker blue border on hover (assuming you don't need to change this) */
+  transform: scale(1.1);
   }
   

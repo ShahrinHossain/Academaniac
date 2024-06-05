@@ -1,6 +1,9 @@
-nav {
+.nav-container {
   width: 100%;
-  color: white;
+  color: rgb(255, 255, 255);
+  background: rgba(255, 255, 255, 0); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); 
   padding: 4px, 0;
   position: fixed;
   top: 0;
@@ -24,9 +27,9 @@ nav ul li {
 }
 .nav-button {
   background-color: rgba(255, 255, 255, 0.8); /* Opaque white background */
-  color: #333; /* Dark text color for contrast */
+  color: #760c0c; /* Dark text color for contrast */
   border: 2px solid #ccc; /* Light grey border */
-  border-radius: 8px; /* Rounded edges */
+  border-radius: 10px; /* Rounded edges */
   padding: 8px 16px; /* Padding inside the button */
   font-size: 16px; /* Font size for text */
   transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
@@ -34,11 +37,38 @@ nav ul li {
 }
 
 .nav-button:hover {
-  background-color: rgba(255, 255, 255, 1); /* Fully opaque white on hover */
-  color: white; /* Change text color to white on hover */
+  background-color: rgb(255, 255, 255); /* Fully opaque white on hover */
+  color: rgb(78, 11, 11); /* Change text color to white on hover */
+  transform: scale(1.2);
 }
 
 .logo-wrapper {
   display: flex; /* Enable Flexbox for horizontal alignment */
   align-items: center; /* Vertically align items to the center (optional) */
 }
+
+.contact-item {
+  position: relative;
+}
+
+.contact-item .btn {
+  position: relative;
+}
+
+.contact-numbers {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.contact-item:hover .contact-numbers {
+  display: block;
+  color: #333; /* Ensures text color contrasts with background */
+}
+

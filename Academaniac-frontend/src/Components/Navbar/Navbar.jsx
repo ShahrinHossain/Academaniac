@@ -7,18 +7,63 @@ export const Navbar = () => {
   const navigateTo = useNavigate();
   return (
     <nav className="nav-container">
-      <div className="logo-wrapper" onClick={()=>{
-        navigateTo('/')
-      }}>
-      <img src={logo} alt="Academaniac Logo" className="logo" />
-      <h4>Academaniac</h4>
+      <div
+        className="logo-wrapper"
+        onClick={() => {
+          navigateTo("/");
+        }}
+      >
+        <img src={logo} alt="Academaniac Logo" className="logo" />
+        <h4>Academaniac</h4>
       </div>
       <ul>
-        <li><a onClick={()=>{
-          navigateTo('/')
-        }}>Home</a></li>
-        <li>Programs</li>
-        <li>About Us</li>
+        <li>
+          <button
+            className="btn"
+            onClick={() => {
+              navigateTo("/");
+            }}
+          >
+            Home
+          </button>
+        </li>
+        <li>
+          <button
+            className="btn"
+            onClick={() => {
+              navigateTo("/about");
+            }}
+          >
+            About Us
+          </button>
+        </li>
+        <li className="contact-item">
+          <button
+            className="btn"
+            onClick={() => {
+              navigateTo("/about");
+            }}
+          >
+            Contact
+          </button>
+          <div className="contact-numbers">
+            
+            <p>+8801743182053</p>
+            <p>
+            deadbeefedfrfr@gmail.com
+            </p>
+          </div>
+        </li>
+        <li>
+          <button
+            className="btn"
+            onClick={() => {
+              navigateTo("/terms");
+            }}
+          >
+            T&Cs
+          </button>
+        </li>
         <li>
           <button
             className="btn"

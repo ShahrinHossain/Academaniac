@@ -31,11 +31,14 @@ import SignUpPage from "./Components/View/SignUpPage.jsx";
 import FirstLoginPage from "./Components/View/FirstLoginPage.jsx";
 import Dashboard from "./Components/dashboard/Dashboard.jsx";
 import EditProfile from './Components/dashboard/EditProfile.jsx';
+import AboutUs from "./Components/Navbar/AboutUs.jsx";
+import Terms from "./Components/Navbar/Terms.jsx";
 
 const App = () => {
   return (
     <div className="home">
       <BrowserRouter>
+      
         <Routes>
           <Route
             index
@@ -70,6 +73,8 @@ const App = () => {
           <Route path="login/first" element={<> <Navbar /> <FirstLoginPage /> </>} />
           <Route path="dashboard" element={<> <Navbar /> <Dashboard /> </>} />
           <Route path="/edit-profile" element={<><Navbar/> <EditProfile /> </>} />
+          <Route path="/about" element={<><Navbar/><AboutUs /> </>} />
+          <Route path="/terms" element={<><Navbar/><Terms /> </>} />
         </Routes>
       </BrowserRouter>
     </div>

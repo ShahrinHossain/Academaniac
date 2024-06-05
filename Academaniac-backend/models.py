@@ -80,6 +80,7 @@ class University(db.Model):
         self.name = name
         self.rank = rank
 
+
 class User_Details(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     role_id = db.Column(db.Integer, nullable=False)
@@ -88,8 +89,10 @@ class User_Details(db.Model):
     gre = db.Column(db.Integer)
     country = db.Column(db.String)
     updated = db.Column(db.Integer)
+    photo_link = db.Column(db.String)
 
-    def __init__(self, id, role_id=0, uni_name="IUT-OIC", cgpa="4.00", gre="340", country="Bangladesh", updated=0):
+    def __init__(self, id, role_id=0, uni_name="unavailable", cgpa=-1, gre=-1, country="Bangladesh", updated=0,
+                 photo_link="res/images/profile_photos/default.jpg"):
         self.id = id
         self.role_id = role_id
         self.uni_name = uni_name
@@ -97,4 +100,18 @@ class User_Details(db.Model):
         self.gre = gre
         self.country = country
         self.updated = updated
+        self.photo_link = photo_link
+
+
+class Department(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    uni_id = db.Column(db.Integer, db.ForeignKey(University.id))
+    mapped_id = db.Column(db.Integer, nullable=False)
+    name = db.Column(db.String(100))
+
+    def __init__(self, uni_id, mapped_id, name=None):
+        self.uni_id = uni_id
+        self.name = name
+        self.mapped_id = mapped_id
+
 

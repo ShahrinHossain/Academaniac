@@ -5,6 +5,7 @@ from flask_cors import CORS, cross_origin
 from auth import auth
 from security import security
 from models import db
+from prediction import prediction
 
 
 app = Flask(__name__)
@@ -24,6 +25,8 @@ app.secret_key = 'secret_key'
 
 app.register_blueprint(auth, url_prefix="/auth")
 app.register_blueprint(security, url_prefix="/security")
+app.register_blueprint(prediction, url_prefix="/prediction")
+
 
 
 with app.app_context():

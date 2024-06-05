@@ -7,6 +7,7 @@ from security import security
 from models import db
 from prediction import prediction
 from user import user
+from university import university
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
@@ -35,6 +36,7 @@ app.register_blueprint(auth, url_prefix="/auth")
 app.register_blueprint(security, url_prefix="/security")
 app.register_blueprint(prediction, url_prefix="/prediction")
 app.register_blueprint(user, url_prefix="/user")
+app.register_blueprint(university, url_prefix="/university")
 
 with app.app_context():
     db.create_all()

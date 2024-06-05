@@ -36,6 +36,11 @@ import Terms from "./Components/Navbar/Terms.jsx";
 import CV from "./Components/Navbar/CV.jsx";
 import SOP from "./Components/Navbar/SOP.jsx";
 import FindUniversities from "./Components/View/FindUniversities.jsx";
+import FindUniContent from "./Components/View/FindUniContent.jsx";
+import Sidebar from "./Components/dashboard/Sidebar.jsx";
+import Scholarships from "./Components/Hero/Scholarships.jsx";
+import FindBestUni from "./Components/dashboard/FindBestUni.jsx";
+import { Nav } from "react-bootstrap";
 
 const App = () => {
   return (
@@ -155,6 +160,102 @@ const App = () => {
             element={
               <>
                 <FindUniversities />
+              </>
+            }
+          />
+          <Route
+            path="login"
+            element={
+              <>
+                {" "}
+                <Navbar /> <LoginPage />{" "}
+              </>
+            }
+          />
+          <Route
+            path="signup"
+            element={
+              <>
+                {" "}
+                <Navbar /> <SignUpPage />{" "}
+              </>
+            }
+          />
+          <Route
+            path="login/first"
+            element={
+              <>
+                {" "}
+                <Navbar /> <FirstLoginPage />{" "}
+              </>
+            }
+          />
+          <Route
+            path="dashboard"
+            element={
+              <>
+                {" "}
+                <Navbar /> <Dashboard />{" "}
+              </>
+            }
+          />
+          <Route
+            path="/edit-profile"
+            element={
+              <>
+                <Navbar /> <EditProfile />{" "}
+              </>
+            }
+          />
+          <Route
+            path="/about"
+            element={
+              <>
+                <Navbar />
+                <AboutUs />{" "}
+              </>
+            }
+          />
+          <Route
+            path="/terms"
+            element={
+              <>
+                <Navbar />
+                <Terms />{" "}
+              </>
+            }
+          />
+          <Route
+            path="/cv"
+            element={
+              <>
+                <Navbar />
+                <CV />{" "}
+              </>
+            }
+          />
+          <Route
+            path="/sop"
+            element={
+              <>
+                <Navbar />
+                <SOP />{" "}
+              </>
+            }
+          />
+          <Route
+            path="/find-best-uni"
+            element={
+              <>
+                <Navbar /> <FindBestUni />{" "}
+              </>
+            }
+          />
+          <Route
+            path="/scholarships/:country"
+            element={
+              <>
+                <Navbar /> <Scholarships />
               </>
             }
           />

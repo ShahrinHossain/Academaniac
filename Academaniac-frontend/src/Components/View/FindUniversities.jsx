@@ -7,6 +7,7 @@ const FindUniversities = () => {
   return (
     <div className="dashboard">
       <Sidebar />
+
       <div className="dashboard--content">
         <FindUniContent />
       </div>

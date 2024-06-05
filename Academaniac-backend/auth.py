@@ -1,4 +1,6 @@
 from flask import Blueprint, jsonify, session, request, render_template, render_template_string, url_for, redirect
+from flask_cors import cross_origin
+
 from models import User, Verification, db, User_Details
 from flask_mail import Mail, Message
 import random
@@ -36,7 +38,9 @@ def generate_random_string(length=6):
 auth = Blueprint("auth", __name__, static_folder="static", template_folder="templates")
 
 
+@cross_origin()
 @auth.route('/login', methods=['POST', 'GET'])
+@cross_origin(methods=['POST'], supports_credentials=True, headers=['Content-Type', 'Authorization'], origin='http://127.0.0.1:5500')
 def login():
     data = request.json
     email = data.get('email')
@@ -256,3 +260,8 @@ def logout():
 
     else:
         return jsonify({"success": False, "message": "Need to login first"}), 400
+
+
+@auth.route('/status')
+def get_status():
+    return jsonify({"success": session.get('id')})

@@ -22,6 +22,8 @@ const SignUpPage = () => {
         method: "POST", // Use POST for sending credentials
         headers: { "Content-Type": "application/json" },
         body: requestBody,
+        mode: "cors",
+        credentials: "include", // Include credentials (cookies)
       });
       console.log(response.status);
 
@@ -32,11 +34,6 @@ const SignUpPage = () => {
         // Handle successful signup (redirect to login)
         navigateTo("/dashboard");
       }
-      //   } else {
-      //     console.log("error");
-      //     const responseData = await response.json();
-      //     console.log("API Response:", responseData); // Print the response for debugging
-      //   }
     } catch (error) {
       console.error("Error:", error);
       // Handle errors appropriately (e.g., display error message to user)
@@ -72,7 +69,7 @@ const SignUpPage = () => {
           <br />
           <br />
           {errorMessage && (
-            <label style={{ color: "red" }}>{errorMessage}</label>
+            <label style={{ color: "white" }}>{errorMessage}</label>
           )}
           <p>
             Don't have and account?

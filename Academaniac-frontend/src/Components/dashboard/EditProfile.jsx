@@ -10,7 +10,7 @@ const EditProfile = () => {
     gre: "",
     country: "",
     subject: "",
-    profilePicture: "",
+    profilePicture: null,
   });
 
   const handleChange = (e) => {
@@ -23,14 +23,10 @@ const EditProfile = () => {
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      setFormData({
-        ...formData,
-        profilePicture: event.target.result,
-      });
-    };
-    reader.readAsDataURL(file);
+    setFormData({
+      ...formData,
+      profilePicture: file,
+    });
   };
 
   const handleSubmit = async (e) => {
@@ -38,19 +34,14 @@ const EditProfile = () => {
 
     const updatedFormData = new FormData();
 
-    // Add regular form data
     for (const key in formData) {
       if (formData[key] !== "" && key !== "profilePicture") {
         updatedFormData.append(key, formData[key]);
       }
     }
 
-    // Add the profile picture file
-    if (e.target.profilePicture.files[0]) {
-      updatedFormData.append(
-        "profilePicture",
-        e.target.profilePicture.files[0]
-      );
+    if (formData.profilePicture) {
+      updatedFormData.append("profilePicture", formData.profilePicture);
     }
 
     try {
@@ -61,6 +52,7 @@ const EditProfile = () => {
           headers: {
             "Content-Type": "multipart/form-data",
           },
+          withCredentials: true,
         }
       );
 
@@ -147,7 +139,7 @@ const EditProfile = () => {
             />
             {formData.profilePicture && (
               <img
-                src={formData.profilePicture}
+                src={URL.createObjectURL(formData.profilePicture)}
                 alt="Profile"
                 style={{ maxWidth: "100%", marginTop: "10px" }}
               />

@@ -20,7 +20,95 @@
   
   
   .about-us-container p {
+    margin-top: 30px;
     font-size: 1rem;
     line-height: 1.6;
+  }
+
+  .youtube-video {
+    margin-top: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+    border-radius: 10px;
+  }
+  
+  .youtube-video h2 {
+    margin-bottom: 13px;
+  }
+
+  .resume-image {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .resume-image img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+  }
+
+  
+  .pdf{
+    background-color: #deafaf; /* Blue button (assuming you don't need to change this) */
+  border-color: #c3e0ff; /* Blue border (assuming you don't need to change this) */
+  color: rgb(0, 0, 0); /* White text (assuming you don't need to change this) */
+  margin-left: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 8px; 
+  }
+  
+  .pdf:hover{
+      transform: scale(1.1);
+      transition: 0.5s  ease-in-out;
+      background-color: #853131 ;
+      color: #fff;
+      
+  }
+
+  .team-container {
+    text-align: center;
+  }
+  
+  .round-image {
+    border-radius: 50%;
+    width: 100px; 
+    height: 100px; 
+    margin: 10px; 
+  }
+
+  .team-container {
+    text-align: center;
+  }
+  
+  .team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .team-member {
+    margin: 30px;
+    text-align: center;
+  }
+  
+  .round-image {
+    border-radius: 50%;
+    width: 80px; /* Adjust the size as needed */
+    height:80px; /* Adjust the size as needed */
+  }
+  
+  .member-details {
+  
+    text-align: left;
+    font-size: 0.2rem;
+    
+  }
+  
+  
+  .member-details p {
+    margin: 0;
+    font-size: 0.7rem;
   }
   

@@ -22,9 +22,9 @@
 .directory-button1{
   position: absolute;
   top: 90px;
-  left: 50px;
+  left: 20px;
   display: block;
-  width: 200px;
+  width: 230px;
   height: 215px;
   /* margin-bottom: 20px; */
   font-size: 18px;
@@ -79,7 +79,7 @@
 .directory-button3{
   position: absolute;
   top: 330px;
-  left: 50px;
+  left: 20px;
   display: block;
   width: 130px;
   height: 250px;
@@ -104,9 +104,9 @@
 .directory-button4{
   position: absolute;
   top: 330px;
-  left: 195px;
+  left: 165px;
   display: block;
-  width: 130px;
+  width: 160px;
   height: 250px;
   /* margin-bottom: 20px; */
   font-size: 18px;

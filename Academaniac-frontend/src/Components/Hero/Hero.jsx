@@ -84,6 +84,7 @@ const Hero = () => {
         {/* Add more buttons as needed */}
       </div>
       <div className="hero-text">
+        
         <SearchBar setResults={setResults} setSelectedOption={setSelectedOption} />
         <SearchResultsTable results={results} />
         {selectedOption && (

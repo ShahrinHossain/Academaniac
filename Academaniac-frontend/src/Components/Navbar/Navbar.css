@@ -58,11 +58,12 @@ nav ul li {
 .contact-numbers {
   display: none;
   position: absolute;
-  top: 100%;
+  top: 105%;
   left: 0;
+  width: 270px;
   background: rgba(255, 255, 255, 0.9);
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 10;
 }
@@ -72,3 +73,39 @@ nav ul li {
   color: #333; /* Ensures text color contrasts with background */
 }
 
+.program{
+  position: relative;
+}
+
+.program .btn {
+  position: relative;
+}
+
+.programs {
+  display: none;
+  position: absolute;
+  top: 105%;
+  left: 0;
+  width: 270px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.program:hover .programs,
+.programs:hover {
+  display: block;
+  color: #333; /* Ensures text color contrasts with background */
+  cursor: pointer;
+}
+
+.programs p:hover {
+  background-color: #333; /* Change background color on hover */
+  color: #ffffff; /* Change text color on hover */
+  transition: 0.3s ease-in-out;
+  transform: scale(1.1);
+  border-radius: 15px;
+  padding: 10px;
+}

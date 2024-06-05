@@ -33,6 +33,8 @@ import Dashboard from "./Components/dashboard/Dashboard.jsx";
 import EditProfile from './Components/dashboard/EditProfile.jsx';
 import AboutUs from "./Components/Navbar/AboutUs.jsx";
 import Terms from "./Components/Navbar/Terms.jsx";
+import CV from "./Components/Navbar/CV.jsx";
+import SOP from "./Components/Navbar/SOP.jsx";
 
 const App = () => {
   return (
@@ -75,6 +77,8 @@ const App = () => {
           <Route path="/edit-profile" element={<><Navbar/> <EditProfile /> </>} />
           <Route path="/about" element={<><Navbar/><AboutUs /> </>} />
           <Route path="/terms" element={<><Navbar/><Terms /> </>} />
+          <Route path="/cv" element={<><Navbar/><CV /> </>} />
+          <Route path="/sop" element={<><Navbar/><SOP /> </>} />
         </Routes>
       </BrowserRouter>
     </div>

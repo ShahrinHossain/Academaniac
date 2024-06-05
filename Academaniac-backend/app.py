@@ -6,6 +6,7 @@ from auth import auth
 from security import security
 from models import db
 from prediction import prediction
+from user import user
 
 
 app = Flask(__name__)
@@ -26,7 +27,7 @@ app.secret_key = 'secret_key'
 app.register_blueprint(auth, url_prefix="/auth")
 app.register_blueprint(security, url_prefix="/security")
 app.register_blueprint(prediction, url_prefix="/prediction")
-
+app.register_blueprint(user, url_prefix="/user")
 
 
 with app.app_context():

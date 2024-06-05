@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, session, request, render_template, render_template_string, url_for, redirect
-from models import User, Verification, db
+from models import User, Verification, db, User_Details
 from flask_mail import Mail, Message
 import random
 import string
@@ -47,6 +47,7 @@ def login():
     if user and user.check_password(password):
         if user.verified:
             session['id'] = user.id
+            print(session['id'])
             # role = Role.query.filter_by(id=user.role_id).first()  # Changed role_id to id
             print('logged IN')
             return jsonify({"success": True, "message": "Successfully logged In"}), 201
@@ -94,6 +95,8 @@ def register():
                 db.session.commit()
             # otp = Verification(email, code, datetime.now())
             # db.session.add(otp)
+            new_user_details = User_Details(new_user.id)
+            db.session.add(new_user_details)
             db.session.add(new_user)
             db.session.commit()
 
@@ -230,6 +233,7 @@ def login_verification():
             session['email'] = user.email
             session['role'] = user.role_id
             session['id'] = user.id
+            print(session['id'])
             return jsonify({"success": True, "message": "User Verified"}), 201
         else:
             return jsonify({"success": False, "message": "Verification code didn't match"}), 401

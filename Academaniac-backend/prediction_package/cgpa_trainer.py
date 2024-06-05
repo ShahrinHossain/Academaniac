@@ -5,10 +5,26 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, precision_score, recall_score, roc_auc_score
 import joblib
 
-# Example data loading (replace with your actual data)
-data = pd.read_csv('finalized_files/training_cgpa_shuffled.csv')
+# File paths
+existing_data_path = 'finalized_files/training_cgpa_shuffled.csv'
+new_data_path = 'finalized_files/new_data_cgpa.csv'
+model_path = 'saved_models/cgpa/logistic_regression_model.joblib'
+scaler_path = 'saved_models/cgpa/scaler.joblib'
+label_encoder_path = 'saved_models/cgpa/label_encoder.joblib'
 
-# data['GPA'] = 10 ** data['GPA']
+# Load existing data
+existing_data = pd.read_csv(existing_data_path)
+
+# Load new data
+new_data = pd.read_csv(new_data_path)
+
+# Combine datasets
+data = pd.concat([existing_data, new_data], ignore_index=True)
+
+# Shuffle the combined dataset
+data = data.sample(frac=1, random_state=42).reset_index(drop=True)
+
+print(data)
 
 # Encode categorical variables
 label_encoder = LabelEncoder()
@@ -34,11 +50,21 @@ logreg = LogisticRegression()
 logreg.fit(X_train_scaled, y_train)
 
 # Save the model and scalers
-joblib.dump(logreg, 'saved_models/cgpa/logistic_regression_model.joblib')
-joblib.dump(scaler, 'saved_models/cgpa/scaler.joblib')
-joblib.dump(label_encoder, 'saved_models/cgpa/label_encoder.joblib')
+joblib.dump(logreg, model_path)
+joblib.dump(scaler, scaler_path)
+joblib.dump(label_encoder, label_encoder_path)
 
-# Make predictions
+# Decode the decision column back to 'Rejected' and 'Accepted'
+data['Decision'] = data['Decision'].apply(lambda x: 'Rejected' if x == 0 else 'Accepted')
+
+# Save the combined and shuffled data back to the original file
+data.to_csv(existing_data_path, index=False)
+
+# Empty the new data file while retaining headers
+empty_new_data = pd.DataFrame(columns=new_data.columns)
+empty_new_data.to_csv(new_data_path, index=False)
+
+# Calculate metrics
 y_train_pred = logreg.predict(X_train_scaled)
 y_test_pred = logreg.predict(X_test_scaled)
 y_test_prob = logreg.predict_proba(X_test_scaled)[:, 1]

@@ -65,6 +65,7 @@ def update_user_details():
         user_details.gre = gre
         user_details.country = country
         user_details.university = university
+        db.session.commit()
 
         if 'profilePicture' in request.files:
             if request.files and 'profilePicture' in request.files:
@@ -73,7 +74,7 @@ def update_user_details():
                     filename = secure_filename(file.filename)
                     file.save(os.path.join("res/images/profile_photos", filename))
                     user_details.photo_link = "res/images/profile_photos/" + filename # Update profile picture path in database
-            db.session.commit()
+
         return jsonify({
             "success": True,
             "message": "Details Updated"

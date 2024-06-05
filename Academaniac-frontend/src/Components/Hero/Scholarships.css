@@ -1,0 +1,114 @@
+/* Scholarships.css */
+
+.scholarships-table {
+    /* position: absolute;
+    left:40px;
+    top: 100px;
+    right: 40px; */
+    
+    margin-right: 40px;
+    width: calc(100% - 20px);
+    border-collapse: collapse;
+    margin-top: 200px;
+    margin-left: 40px;
+     /* padding-top: 90px;
+    padding-left: 30px; 
+    padding-right: 10px; */
+  }
+  
+  .scholarships-table th,
+  .scholarships-table td {
+    border: 1px solid #ffffff;
+    padding: 8px;
+  }
+  
+  .scholarships-table th {
+    background-color: rgba(115, 174, 237, 0.8); /* Changed header color to a little transparent */
+    color: #fff;
+  }
+
+  .scholarships-table td{
+    background-color:  rgba(31, 45, 60, 0.8);
+    color: #fff;
+  }
+  
+  .scholarships-table tbody tr:hover {
+    background-color: #f9f9f9;
+    transition: 0.5s ease-in-out;
+    
+  }
+  
+  .scholarships-table a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .scholarships-table a:hover {
+    text-decoration: underline;
+  }
+
+  .etar-moddhe-table{
+    /* background: linear-gradient(rgba(17, 17, 21, 0.7), rgba(17, 17, 21, 0.7)),
+    url("../../assets/scholarship.jpg");
+    background-size: cover; */
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0px;
+  }
+
+  .scholarships-table .link-button {
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 0;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #222c66;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .scholarships-table .link-button:hover {
+    background-color: #222c66;
+    color: #fff;
+    transition: 0.5s ease-in-out;
+    transform: scale(1.1);
+  }
+
+  .heading{
+    position: absolute;
+    top: 120px;
+    left: 40px;
+    color:rgb(137, 190, 247);
+  }
+
+  .select-bar{
+    position: absolute;
+    top: 120px;
+    left: 1265px;
+
+    padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  color: #333;
+
+  }
+
+  .select-bar option {
+    background-color: #fff;
+    color: #333;
+  }
+
+  .select-bar option:hover{
+    transition: 0.5s ease-in-out;
+    color:rgb(137, 190, 247);
+    background-color: #1f1f1f;
+  }
+  

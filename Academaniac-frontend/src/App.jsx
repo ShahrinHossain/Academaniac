@@ -35,6 +35,10 @@ import AboutUs from "./Components/Navbar/AboutUs.jsx";
 import Terms from "./Components/Navbar/Terms.jsx";
 import CV from "./Components/Navbar/CV.jsx";
 import SOP from "./Components/Navbar/SOP.jsx";
+import Sidebar from "./Components/dashboard/Sidebar.jsx"
+import Scholarships from "./Components/Hero/Scholarships.jsx";
+import FindBestUni from "./Components/dashboard/FindBestUni.jsx";
+import { Nav } from "react-bootstrap";
 
 const App = () => {
   return (
@@ -79,6 +83,8 @@ const App = () => {
           <Route path="/terms" element={<><Navbar/><Terms /> </>} />
           <Route path="/cv" element={<><Navbar/><CV /> </>} />
           <Route path="/sop" element={<><Navbar/><SOP /> </>} />
+          <Route path="/find-best-uni" element={<><Navbar/> <FindBestUni /> </>} />
+          <Route path="/scholarships/:country" element={<><Navbar/> <Scholarships/></>} />
         </Routes>
       </BrowserRouter>
     </div>

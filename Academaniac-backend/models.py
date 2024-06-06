@@ -75,14 +75,17 @@ class University(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100))
     rank = db.Column(db.Integer)
+    country = db.Column(db.String)
 
-    def __init__(self, name, rank=-1):
+    def __init__(self, name, rank=-1, country="USA"):
         self.name = name
         self.rank = rank
+        self.country = country
 
 
 class User_Details(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100))
     role_id = db.Column(db.Integer, nullable=False)
     uni_name = db.Column(db.String(100))
     cgpa = db.Column(db.Float)
@@ -91,7 +94,7 @@ class User_Details(db.Model):
     updated = db.Column(db.Integer)
     photo_link = db.Column(db.String)
 
-    def __init__(self, id, role_id=0, uni_name="unavailable", cgpa=-1, gre=-1, country="Bangladesh", updated=0,
+    def __init__(self, id, role_id=0, name="", uni_name="unavailable", cgpa=-1, gre=-1, country="Bangladesh", updated=0,
                  photo_link="res/images/profile_photos/default.jpg"):
         self.id = id
         self.role_id = role_id
@@ -101,6 +104,7 @@ class User_Details(db.Model):
         self.country = country
         self.updated = updated
         self.photo_link = photo_link
+        self.name = name
 
 
 class Department(db.Model):

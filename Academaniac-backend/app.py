@@ -10,6 +10,7 @@ from user import user
 from uni_scrape import uni_scrape
 
 from university import university
+from wishlist import wishlist
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
@@ -41,6 +42,7 @@ app.register_blueprint(user, url_prefix="/user")
 app.register_blueprint(uni_scrape, url_prefix="/uni_scrape")
 
 app.register_blueprint(university, url_prefix="/university")
+app.register_blueprint(wishlist, url_prefix="/wishlist")
 
 with app.app_context():
     db.create_all()

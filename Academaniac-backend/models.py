@@ -75,9 +75,9 @@ class University(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100))
     rank = db.Column(db.Integer)
-    country = db.Column(db.String)
+    country = db.Column(db.Integer)
 
-    def __init__(self, name, rank=-1, country="USA"):
+    def __init__(self, name, rank=-1, country=1):
         self.name = name
         self.rank = rank
         self.country = country
@@ -118,4 +118,23 @@ class Department(db.Model):
         self.name = name
         self.mapped_id = mapped_id
 
+
+class Wishlist(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey(User.id))
+    uni_id = db.Column(db.Integer, db.ForeignKey(University.id), nullable=False)
+    program_id = db.Column(db.Integer, db.ForeignKey(Department.id))
+
+    def __init__(self, user_id=-1, uni_id=-1, program_id=-1):
+        self.uni_id = uni_id
+        self.user_id = user_id
+        self.program_id = program_id
+
+
+class Country(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String)
+
+    def __init__(self, name="Bangladesh"):
+        self.name = name
 

@@ -18,4 +18,4 @@ def get_all_universities():
             'rank': uni.rank,
             'country': uni.country,
         } for uni in universities]
-    })
+    }), 201

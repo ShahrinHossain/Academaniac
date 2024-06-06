@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../dashboard/Dashboard.css";
 import Sidebar from "../dashboard/Sidebar";
 import FindUniContent from "./FindUniContent";

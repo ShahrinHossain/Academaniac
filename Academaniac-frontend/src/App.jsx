@@ -41,6 +41,7 @@ import Sidebar from "./Components/dashboard/Sidebar.jsx";
 import Scholarships from "./Components/Hero/Scholarships.jsx";
 import FindBestUni from "./Components/dashboard/FindBestUni.jsx";
 import { Nav } from "react-bootstrap";
+import allUsers from "./Data.json";
 
 const App = () => {
   return (

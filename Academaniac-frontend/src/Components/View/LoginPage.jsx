@@ -76,7 +76,7 @@ const SignUpPage = () => {
           )}
           <p>
             Don't have and account?
-            <a onClick={() => navigateTo("/signup")}>Sign Up</a>
+            <a onClick={() => navigateTo("/signup")} className="signUpLabel">Sign Up</a>
           </p>
           <Button variant="primary" type="submit">
             Submit

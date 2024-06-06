@@ -1,9 +1,6 @@
 import React from "react";
-import "./AboutUs.css"; // Ensure this CSS file is created and styled
-import mem1Image from '../../assets/dhrubo.png';
-import mem2Image from '../../assets/sreya.png';
-import mem3Image from '../../assets/siam.png';
-import mem4Image from '../../assets/sahil.png';
+import "./Help.css"; // Ensure this CSS file is created and styled
+
 
 const Help = () => {
     return (

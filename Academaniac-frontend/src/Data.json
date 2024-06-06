@@ -1,12 +1,56 @@
 [
     {
-        "name": "Stanford University",
-        "rank": 5,
-        "country": "United States"
-    },
-    {
+        "id": 1,
         "name": "Massachusetts Institute of Technology",
         "rank": 1,
-        "country": "United States"
+        "country": "United States of America"
+    },
+    {
+        "id": 2,
+        "name": "Stanford University",
+        "rank": 5,
+        "country": "United States of America"
+    },
+    {
+        "id": 3,
+        "name": "University of Alberta",
+        "rank": 111,
+        "country": "Canada"
+    },
+    {
+        "id": 4,
+        "name": "McMaster University",
+        "rank": 189,
+        "country": "Canada"
+    },
+    {
+        "id": 5,
+        "name": "University of Oxford",
+        "rank": 3,
+        "country": "United Kingdom"
+    },
+    {
+        "id": 6,
+        "name": "University of Illinois",
+        "rank": 69,
+        "country": "United States of America"
+    },
+    {
+        "id": 7,
+        "name": "University of Toronto",
+        "rank": 25,
+        "country": "Canada"
+    },
+    {
+        "id": 8,
+        "name": "University of California, Berkeley",
+        "rank": 12,
+        "country": "United States of America"
+    },
+    {
+        "id": 9,
+        "name": "Texas Tech University",
+        "rank": 494,
+        "country": "United States of America"
     }
 ]

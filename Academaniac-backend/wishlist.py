@@ -14,9 +14,11 @@ def add_to_wishlist():
         # user_id = session.get('id')
         user_id = 1
         uni_id = data.get('uni_id')
-        dept_id = data.get('dept_id')
+        dept_name = data.get('dept_name')
 
-        wish = Wishlist(user_id=user_id, uni_id=uni_id, program_id=dept_id)
+        dept = Department.query.filter_by(uni_id=uni_id, name=dept_name).first()
+
+        wish = Wishlist(user_id=user_id, uni_id=uni_id, program_id=dept.id)
         db.session.add(wish)
         db.session.commit()
 

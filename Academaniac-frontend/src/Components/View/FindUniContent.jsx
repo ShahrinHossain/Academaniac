@@ -32,7 +32,7 @@ const FindUniContent = () => {
   onSelect={(selected) => setSelectedUniversityName(selected)}
 />
 
-        <button className="wishlist-button" onClick={handleGoButtonClick}>Go <BiRightArrow fontSize={20}/></button>
+        <button className="wishlist-button" onClick={handleGoButtonClick}>Go</button>
       </div>
     </div>
   );

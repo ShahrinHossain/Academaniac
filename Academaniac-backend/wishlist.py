@@ -5,7 +5,6 @@ from models import db, User, Department, Wishlist, University
 
 wishlist = Blueprint("wishlist", __name__, static_folder="static", template_folder="templates")
 
-
 @cross_origin(supports_credentials=True, methods=['POST', 'OPTIONS'])
 @wishlist.route('/post', methods=['POST', 'OPTIONS'])
 def add_to_wishlist():
@@ -28,3 +27,18 @@ def add_to_wishlist():
         return jsonify({"success": True}), 201
     else:
         return jsonify({"success": False, "message": "login required"}), 401
+
+
+@cross_origin(supports_credentials=True, methods=['GET'])
+@wishlist.route('/get-info')
+def get_wishlist():
+    if 'id' in session:
+        user_id = session.get('id')
+        wishes = Wishlist.query.filter_by(user_id=user_id).all()
+
+        return jsonify({
+            "added": [{
+                "university": University.query.filter_by(id=wish.uni_id).first().name,
+                "dept": Department.query.filter_by(id=wish.program_id).first().name
+            } for wish in wishes]
+        }), 201

@@ -72,7 +72,7 @@ const SignUpPage = () => {
           <br />
           <p>
             Already have an account? 
-            <a onClick={() => navigateTo("/login")}>Sign In</a>
+            <a onClick={() => navigateTo("/login")} className="signInLabel">Sign In</a>
           </p>
 
           <Button variant="primary" type="submit">

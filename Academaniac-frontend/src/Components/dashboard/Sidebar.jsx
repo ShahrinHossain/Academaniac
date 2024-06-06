@@ -12,7 +12,7 @@ const Sidebar = () => {
       </div>
 
       <div className="menu--list">
-        <Link to="/" className="item">
+        <Link to="/wishlist" className="item">
           <BiHome className="icon"/>
           Wishlist
         </Link>

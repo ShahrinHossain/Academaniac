@@ -26,11 +26,12 @@ app.config['SESSION_FILE_DIR'] = '/tmp/flask_session'  # Directory for session f
 app.config['SESSION_COOKIE_SAMESITE'] = "None"
 app.config['SESSION_COOKIE_SECURE'] = True
 app.secret_key = 'secret_key'
+app.url_map.strict_slashes = False
 
 server_session = Session(app)
 
 # CORS configuration to allow credentials and specific origin
-CORS(app, supports_credentials=True, resources={r"/*": {"origins": "*"}})
+CORS(app, supports_credentials=True, resources={r"*": {"origins": "*"}})
 
 db.init_app(app)
 mail = Mail(app)

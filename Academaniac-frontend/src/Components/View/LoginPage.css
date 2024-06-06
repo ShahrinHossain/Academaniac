@@ -12,3 +12,8 @@
   align-items: center;
   justify-content: center;
 }
+
+.signUpLabel{
+  margin-left: 5px;
+  color: rgb(0, 231, 119);
+}

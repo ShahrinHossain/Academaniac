@@ -79,6 +79,7 @@ nav ul li {
 
 .program .btn {
   position: relative;
+  background-color: #333;
 }
 
 .programs {
@@ -108,4 +109,8 @@ nav ul li {
   transform: scale(1.1);
   border-radius: 15px;
   padding: 10px;
+}
+
+.btn{
+  background-color: #333;
 }

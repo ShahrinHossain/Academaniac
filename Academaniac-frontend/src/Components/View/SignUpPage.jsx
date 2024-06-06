@@ -9,6 +9,7 @@ import "./SignUpPage.css";
 const SignUpPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
   const navigateTo = useNavigate();
 
   const handleSubmit = async (event) => {
@@ -23,17 +24,18 @@ const SignUpPage = () => {
         body: requestBody,
       });
 
-      if (response.status == 201) {
+      if (response.status === 201) {
         console.log(response.status);
-        navigateTo("/login");
-        // throw new Error(`API request failed with status ${response.status}`);
+        setSuccessMessage("Verification code sent. Please check your email. Redirecting to login page.....");
+
+        setTimeout(() => {
+          navigateTo("/login");
+        }, 2000);
+      } else {
+        const responseData = await response.json();
+        console.log("API Response:", responseData); // Print the response for debugging
+        // Handle other statuses or error messages from the API
       }
-
-      const responseData = await response.json();
-      console.log("API Response:", responseData); // Print the response for debugging
-
-      // Handle successful signup (e.g., navigate to a confirmation page)
-      // navigateTo("/dashboard"); // Example navigation (uncomment after proper implementation)
     } catch (error) {
       console.error("Error:", error);
       // Handle errors appropriately (e.g., display error message to user)
@@ -66,15 +68,14 @@ const SignUpPage = () => {
               />
             </Form.Group>
           </Row>
-          {/* <Form.Group className="mb-3" id="formGridCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
-        </Form.Group> */}
           <br />
           <p>
             Already have an account? 
             <a onClick={() => navigateTo("/login")} className="signInLabel">Sign In</a>
           </p>
-
+          {successMessage && (
+            <p style={{ color: "white" }}>{successMessage}</p>
+          )}
           <Button variant="primary" type="submit">
             Submit
           </Button>

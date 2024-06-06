@@ -5,6 +5,7 @@ from models import db, User, Department, Wishlist, University
 
 wishlist = Blueprint("wishlist", __name__, static_folder="static", template_folder="templates")
 
+
 @cross_origin(supports_credentials=True, methods=['POST', 'OPTIONS'])
 @wishlist.route('/post', methods=['POST', 'OPTIONS'])
 def add_to_wishlist():

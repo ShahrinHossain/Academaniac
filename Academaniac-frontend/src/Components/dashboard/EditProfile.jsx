@@ -69,9 +69,6 @@ const EditProfile = () => {
   return (
     <div className="edit-profile">
       <h4 className="edit-form-name">Edit Profile</h4>
-      <div className="save-changes-button">
-        <button onClick={handleSubmit}>Save Changes</button>
-      </div>
       <div className="edit-profile-form">
         <form onSubmit={handleSubmit}>
           <div>

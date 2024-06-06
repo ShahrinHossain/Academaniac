@@ -15,7 +15,7 @@ const Wishlist = () => {
 
       if (selectedDept && {id}) {
         const response = await axios.post(
-          'http://localhost:5000/wishlist',
+          'http://localhost:5000/wishlist/',
           { uni_rank: id, dept_name: selectedDept },
           {
             headers: {

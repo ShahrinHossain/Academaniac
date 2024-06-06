@@ -13,9 +13,11 @@ const Wishlist = () => {
   const handleAddToWishlist = async () => {
     try {
 
-      if (selectedDept && {id}) {
+        
+
+      if (selectedDept && id) {
         const response = await axios.post(
-          'http://localhost:5000/wishlist/',
+          'http://localhost:5000/wishlist/post',
           { uni_rank: id, dept_name: selectedDept },
           {
             headers: {

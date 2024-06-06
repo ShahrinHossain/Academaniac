@@ -24,6 +24,7 @@ import allUsers from "./Data.json";
 import Commie from "./Components/community/Commie.jsx";
 import Add_wishlist from "./Components/View/Add_wishlist.jsx";
 import Help from './Components/dashboard/Help.jsx';
+import MyWishlist from "./Components/View/MyWishlist.jsx";
 
 const App = () => {
   return (
@@ -264,6 +265,14 @@ const App = () => {
             element={
               <>
                 <Navbar/> <Help />
+              </>
+            }
+          />
+          <Route
+            path="/wishlist"
+            element={
+              <>
+                <Navbar/> <MyWishlist/>
               </>
             }
           />

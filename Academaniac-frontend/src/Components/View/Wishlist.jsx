@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams , useNavigate} from 'react-router-dom';
 import axios from 'axios'; // Make sure to install axios if not already installed
 import departmentData from '../../Depts.json'; // Import the department data
 import allUsers from '../../Data.json'; // Import the university data
 import './FindUniversities.css';
 
+
 const Wishlist = () => {
   const { id } = useParams(); // Extract the uni_id from the URL path
+  const navigate = useNavigate();
   const departmentNames = departmentData[id] || [];
   const [selectedDept, setSelectedDept] = useState('');
 
@@ -29,6 +31,7 @@ const Wishlist = () => {
 
         if (response.data.success) {
           console.log('Added to wishlist:', response.data);
+          navigate('/wishlist');
         } else {
           console.error('Error adding to wishlist:', response.data.message);
         }

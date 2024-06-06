@@ -2,11 +2,11 @@
     {
         "name": "Stanford University",
         "rank": 5,
-        "country": "USA"
+        "country": "United States"
     },
     {
-        "name": "MIT",
+        "name": "Massachusetts Institute of Technology",
         "rank": 1,
-        "country": "USA"
+        "country": "United States"
     }
 ]

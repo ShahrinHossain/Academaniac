@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { BiLogoDiscord } from 'react-icons/bi';
 import './commie.css';
+import Sidebar from '../dashboard/Sidebar';
 
 const Commie = ({ userId }) => {
   const [members, setMembers] = useState([]);
@@ -25,7 +26,8 @@ const Commie = ({ userId }) => {
 
   return (
     <div className="commie-container">
-      <div className="portrait-rectangle">
+        <Sidebar />
+      {/* <div className="portrait-rectangle">
         <h2>University Members</h2>
         <ul>
           {members.map((member, index) => (
@@ -38,7 +40,7 @@ const Commie = ({ userId }) => {
             </li>
           ))}
         </ul>
-      </div>
+      </div> */}
       <div className="square">
         <a href="https://discord.gg/J2ZeVbfH" target="_blank" rel="noopener noreferrer">
           <BiLogoDiscord fontSize={150} />

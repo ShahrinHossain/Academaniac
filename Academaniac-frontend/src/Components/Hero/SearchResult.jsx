@@ -10,7 +10,7 @@ export const SearchResult = ({ result }) => {
   };
 
   return (
-    <div className="search-result" onClick={handleClick}>
+    <div className="search-result" onClick={handleClick} key={result.id}>
       {result.name}
     </div>
   );

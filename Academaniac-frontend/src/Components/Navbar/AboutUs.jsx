@@ -40,7 +40,7 @@ const AboutUs = () => {
       </div>
         
         <div className="about-us-container">
-            <p>This website is designed by Team TaranTula from department of CSE,Islamic University of Technology-OIC, Bangladesh</p>
+            <p>This website is designed by Team TaranTula from department of CSE, Islamic University of Technology-OIC, Bangladesh</p>
             <div className="team-container">
       
       <div className="team-members">
@@ -72,7 +72,7 @@ const AboutUs = () => {
         <img src={mem4Image} alt="Member 4" className="round-image" />
           <div className="member-details">
             <p>Sadman Rahman</p>
-            <p>sahil@iut-dhaka.edu</p>
+            <p>saddubabasahil@gmail.com</p>
             <p>01953320202</p>
           </div>
         </div>

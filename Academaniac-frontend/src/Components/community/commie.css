@@ -1,0 +1,56 @@
+.commie-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Make sure the container takes up the full height of the viewport */
+  }
+  
+  .square {
+    position: absolute;
+    /* top: 40%; */
+    margin-top: 90px;
+    right: 30px; /* Adjust this value to position the square further from the right edge */
+    
+    width: 350px; /* Adjust the width as needed */
+    height:350px; /* Adjust the height as needed */
+    background-color: #7289da; /* Example background color, use your desired color */
+    background: linear-gradient(rgba(84, 84, 101, 0.7), rgba(61, 61, 78, 0.7)),
+    url("../../assets/discord.jpg");
+    background: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visibility */
+  }
+  
+  .square a {
+    text-decoration: none; /* Remove underline */
+    font-size: 18px; /* Adjust font size as needed */
+    text-align: center; /* Center the text */
+  }
+
+  .square p{
+    color: white;
+
+  }
+
+  .square:hover{
+    transform: scale(1.05);
+  }
+
+  .portrait-rectangle {
+    position: absolute;
+    top: 90px;
+    left:200px;
+    width: 30%;
+    background-color: #f0f0f0;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+  }
+  
+
+
+
+
+  

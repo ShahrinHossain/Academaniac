@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./SearchBar.css";
 
-function SearchBar({ placeholder, data }) {
+function SearchBar({ placeholder, data, onSelect }) {
   const [filterWordData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
+
   const handleFilter = (event) => {
     const searchWord = event.target.value;
     setWordEntered(searchWord);
@@ -16,7 +17,12 @@ function SearchBar({ placeholder, data }) {
     } else {
       setFilteredData(newFilter);
     }
-    // console.log(searchWord);
+  };
+
+  const handleClick = (value) => {
+    onSelect(value.name); // Call onSelect callback with the selected option
+    setWordEntered(value.name); // Set the selected option as the input value
+    setFilteredData([]); // Clear the filtered options
   };
 
   return (
@@ -39,7 +45,7 @@ function SearchBar({ placeholder, data }) {
           <div className="dataResult">
             {filterWordData.slice(0, 15).map((value, index) => {
               return (
-                <div className="list border-bottom" key={index}>
+                <div className="list border-bottom" key={index} onClick={() => handleClick(value)}>
                   <div className="d-flex flex-column ml-3">
                     <span>{value.name}</span>
                   </div>

@@ -132,3 +132,29 @@ def upload_file():
 #             "success": False,
 #             "message": "Login First"
 #         }), 401
+
+
+@cross_origin(supports_credentials=True, methods=['GET'])
+@user.route('/university_members', methods=['GET'])
+def get_university_members():
+    university = request.args.get('university')
+    if university:
+        members = User_Details.query.filter_by(uni_name=university).all()
+        members_list = [
+            {
+                "name": member.name,
+                "photo": member.photo_link,
+                "country": member.country,
+                "role": member.role_id
+            }
+            for member in members
+        ]
+        return jsonify({
+            "success": True,
+            "members": members_list
+        }), 200
+    else:
+        return jsonify({
+            "success": False,
+            "message": "University not provided"
+        }), 400

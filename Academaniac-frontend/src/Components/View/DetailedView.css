@@ -1,58 +1,76 @@
-.custom-link {
-  display: inline-block;
-  padding: 10px 20px;
-  border: none; /* Blue border */
-  border-radius: 10px;
-  text-decoration: none;
-  color: white; /* Blue text to match the border */
-  background-color: #229ec4; /* Transparent background by default */
-  transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
+.container-fluid {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(84, 84, 92, 0.7)),url('../../assets/scholarship.jpg');
+  background-size: cover;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.add-to-list{
-  display: inline-block;
-  padding: 10px 20px;
-  border: none; /* Blue border */
-  border-radius: 10px;
+.detailed-view-container {
+  color: #b73b0a;
+  background-color: #333;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container-card {
+  background: rgba(255, 255, 255, 0.5); 
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px); 
+  position: absolute;
+  top: 130px;
+  margin-left: 40px;
+  margin-right: 500px;
+  padding: 20px;
+  
+  border-radius: 8px;
+}
+
+.container-card p{
+  color:#2b1313;
+  font-size: 20px;
+}
+
+.header-details {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.details-section {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.scraped-data-section {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+/* .custom-link {
+  color: #007bff;
   text-decoration: none;
-  color: white; /* Blue text to match the border */
-  background-color: #229ec4; /* Transparent background by default */
-  transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */  
-}
-.add-to-list:hover{
-  background-color: #add8e6; /* Light blue background on hover */
-  color: #000; /* Black text on hover */
-}
+} */
 
 .custom-link:hover {
-  background-color: #add8e6; /* Light blue background on hover */
-  color: #000; /* Black text on hover */
-}
-.header-details {
-  margin-top: 50px; /* Adjust this value to move the heading more or less */
+  text-decoration: underline;
 }
 
-.container-fluid {
-  width: 100%;
-  min-height: 100vh;
-  background: linear-gradient(rgba(17, 17, 21, 0.7), rgba(17, 17, 21, 0.7)),
-    url("../../assets/detail.jpg");
-
-  background-size: cover;
-  background-position-x: 40%;
-  background-position-y: 60%;
-  color: white;
-  display: flex;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  text-align: center; 
+.add-to-list-btn {
+  margin-top: 20px;
 }
 
-.container-card{
-  
-  
-  position: center;
-
+.ashol-data{
+  font-size: 20px;
+  color: #ffffff;
 }
 
+.visit-site-btn {
+  margin-top: 10px;
+}
+
+.add-to-list-btn {
+  margin-top: 10px;
+  margin-left: 400px;
+}

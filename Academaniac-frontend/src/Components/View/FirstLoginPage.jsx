@@ -59,7 +59,7 @@ const FirstLoginPage = ({ email }) => {
           {/* Display error message */}
           <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
             <Form.Label column sm={2}>
-              Verification Code
+              Code:
             </Form.Label> <br/>
             <Col sm={10}>
               <Form.Control

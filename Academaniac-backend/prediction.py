@@ -44,3 +44,4 @@ def update_csv(rank, cgpa, dept, decision):
         df.to_csv(f, header=False, index=False)
 
     print("Data appended to fruits.csv using Pandas")
+

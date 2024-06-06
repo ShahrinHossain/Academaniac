@@ -75,7 +75,7 @@ const EditProfile = () => {
       <div className="edit-profile-form">
         <form onSubmit={handleSubmit}>
           <div>
-            <label>Name:</label>
+            <label >Name:</label>
             <input
               type="text"
               name="name"

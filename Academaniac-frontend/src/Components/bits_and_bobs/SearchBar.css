@@ -34,3 +34,23 @@ body {
 .right-pan {
   padding-left: 10px;
 }
+
+.dataResult {
+  position: absolute;
+  z-index: 1;
+  width: 25%;
+  background-color: white; /* Set the background color to white */
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.dataResult .list {
+  padding: 10px;
+  cursor: pointer;
+  color: black; /* Set the text color to black */
+}
+
+.dataResult .list:hover {
+  background-color: #f1f1f1; /* Add hover effect */
+}
+

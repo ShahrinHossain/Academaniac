@@ -1,0 +1,54 @@
+.wishlist-button, .predict-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .wishlist-button {
+    background-color: #a5abb0;
+    color: rgb(0, 0, 0);
+    margin-right: 10px;
+    margin-bottom: 220px;
+  }
+
+  .wishlist-button:hover{
+    transform: scale(1.1);
+  }
+
+
+  
+  .cardd .title{
+    color: white;
+    font-size: 20px;
+    margin-top: 100px;
+  }
+
+  .cardd:hover{
+    transform: scale(1.0);
+  }
+
+  .card-container{
+    width: 510px;
+    padding-left: 10px;
+    gap: 20px;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.cardd{
+    flex: 1;
+    background: #cfabab;
+    background: linear-gradient(rgba(17, 17, 21, 0.7), rgba(17, 17, 21, 0.7)),
+    url("../../assets/library.jpg");
+    background-size: cover;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    transition: 0.5s ease-in-out;
+}
+

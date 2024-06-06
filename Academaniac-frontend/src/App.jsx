@@ -160,8 +160,9 @@ const App = () => {
           <Route
             path="/find-university"
             element={
-              <>
-                <FindUniversities />
+              <><Navbar/>
+                
+                < FindUniversities />
               </>
             }
           />
@@ -265,7 +266,7 @@ const App = () => {
             path="/community"
             element={
               <>
-                <Navbar /> <Sidebar /> <Commie />
+                <Navbar /> <Commie />
               </>
             }
           />

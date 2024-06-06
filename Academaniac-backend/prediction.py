@@ -15,7 +15,7 @@ def get_prediction():
 
     university = University.query.filter_by(id=uni_id).first()
     user = User_Details.query.filter_by(id=user_id).first()
-    dept = Department.query.filter_by(name=program, uni_id=uni_id).first().mapped_id
+    dept = Department.query.filter_by(id=program, uni_id=uni_id).first().mapped_id
     rank = university.rank
     cgpa = user.cgpa
 

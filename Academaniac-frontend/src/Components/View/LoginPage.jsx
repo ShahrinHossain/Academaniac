@@ -29,10 +29,13 @@ const SignUpPage = () => {
 
       if (response.status === 202) {
         // throw new Error(`API request failed with status ${response.status}`);
+        setErrorMessage("");
         navigateTo("/login/first", { state: { email } });
       } else if (response.status === 201) {
         // Handle successful signup (redirect to login)
         navigateTo("/dashboard");
+      } else{
+        setErrorMessage("Incorrect Email or password");;
       }
     } catch (error) {
       console.error("Error:", error);

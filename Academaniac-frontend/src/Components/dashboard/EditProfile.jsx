@@ -152,10 +152,11 @@ const EditProfile = () => {
             >
               Upload
             </button>
-          </div>
-          <div className="save-changes-button">
             <button type="submit">Save Changes</button>
           </div>
+          {/* <div className="save-changes-button">
+            
+          </div> */}
         </form>
       </div>
     </div>

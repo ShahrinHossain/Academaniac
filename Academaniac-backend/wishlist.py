@@ -10,9 +10,9 @@ wishlist = Blueprint("wishlist", __name__, static_folder="static", template_fold
 @wishlist.route('/', methods=['POST'])
 def add_to_wishlist():
     data = request.json
-    if 'id' in session or True:
-        # user_id = session.get('id')
-        user_id = 1
+    if 'id' in session :
+        user_id = session.get('id')
+        # user_id = 1
         uni_id = data.get('uni_id')
         dept_name = data.get('dept_name')
 

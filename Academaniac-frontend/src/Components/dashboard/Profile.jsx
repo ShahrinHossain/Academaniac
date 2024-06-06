@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ProfileHeader from "./ProfileHeader";
 import axios from "axios";
 import "./Profile.css";
-import defaultUserImage from "../../../../Academaniac-backend/res/images/profile_photos/Screenshot_2024-06-02_142317.png";
+import defaultUserImage from "../../../../Academaniac-backend/res/images/profile_photos/dhrubo.jpg";
 import {
   BiSolidGraduation,
   BiPaperPlane,

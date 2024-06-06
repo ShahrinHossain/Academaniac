@@ -1,27 +1,34 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, session
 from prediction_package.get_prediction_cgpa import predict_admission
 import pandas as pd
 from models import db, University, User_Details, Department
+from flask_cors import cross_origin
 
 prediction = Blueprint("prediction", __name__, static_folder="static", template_folder="templates")
 
 
-@prediction.route('/', methods=['GET'])
+@cross_origin(supports_credentials=True, methods=['GET'])
+@prediction.route('/get', methods=['GET'])
 def get_prediction():
-    data = request.json
-    user_id = data.get('user_id')
-    uni_id = data.get('uni_id')
-    program = data.get('program')
+    if 'id' in session or True:
+        data = request.json
+        # user_id = data.get('user_id')
+        user_id = session.get('id')
+        user_id = 1
+        uni_rank = data.get('uni_rank')
+        uni = University.query.filter_by(rank=uni_rank).first()
+        uni_id = uni.id
+        program = data.get('program')
 
-    university = University.query.filter_by(id=uni_id).first()
-    user = User_Details.query.filter_by(id=user_id).first()
-    dept = Department.query.filter_by(id=program, uni_id=uni_id).first().mapped_id
-    rank = university.rank
-    cgpa = user.cgpa
+        # university = University.query.filter_by(id=uni_id).first()
+        user = User_Details.query.filter_by(id=user_id).first()
+        dept = Department.query.filter_by(name=program, uni_id=uni_id).first().mapped_id
+        rank = uni_rank
+        cgpa = user.cgpa
 
-    ans = round(predict_admission(university_rank=rank, department=dept, undergrad_cgpa=cgpa) * 100, 2)
+        ans = round(predict_admission(university_rank=rank, department=dept, undergrad_cgpa=cgpa) * 100, 2)
 
-    return jsonify({"success": True, "probability": ans}), 201
+        return jsonify({"success": True, "probability": ans}), 201
 
 
 @prediction.route('/add', methods=['POST'])

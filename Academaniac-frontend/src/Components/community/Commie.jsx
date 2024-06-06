@@ -26,7 +26,7 @@ const Commie = ({ userId }) => {
 
   return (
     <div className="commie-container">
-        <Sidebar />
+    
       {/* <div className="portrait-rectangle">
         <h2>University Members</h2>
         <ul>

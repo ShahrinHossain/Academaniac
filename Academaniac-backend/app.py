@@ -5,7 +5,7 @@ from flask_session import Session
 from auth import auth
 from security import security
 from models import db
-# from prediction import prediction
+from prediction import prediction
 from user import user
 from uni_scrape import uni_scrape
 
@@ -38,7 +38,7 @@ mail = Mail(app)
 
 app.register_blueprint(auth, url_prefix="/auth")
 app.register_blueprint(security, url_prefix="/security")
-# app.register_blueprint(prediction, url_prefix="/prediction")
+app.register_blueprint(prediction, url_prefix="/prediction")
 app.register_blueprint(user, url_prefix="/user")
 app.register_blueprint(uni_scrape, url_prefix="/uni_scrape")
 

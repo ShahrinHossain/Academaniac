@@ -7,8 +7,8 @@
   .square {
     position: absolute;
     /* top: 40%; */
-    margin-top: 90px;
-    right: 30px; /* Adjust this value to position the square further from the right edge */
+    margin-top: 160px;
+    right: 580px; /* Adjust this value to position the square further from the right edge */
     
     width: 350px; /* Adjust the width as needed */
     height:350px; /* Adjust the height as needed */

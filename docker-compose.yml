@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+  backend:
+    build: ./Academaniac-backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./Academaniac-backend:/app-front
+    environment:
+      - FLASK_ENV=development
+
+  frontend:
+    build: ./Academaniac-frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./Academaniac-frontend:/app-back
+    depends_on:
+      - backend
+    environment:
+      - NODE_ENV=development

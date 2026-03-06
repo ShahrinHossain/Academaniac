@@ -174,6 +174,6 @@ Models are stored in `Academaniac-backend/prediction_package/saved_models/` and 
 | Name | Student ID | GitHub |
 |------|-----------|--------|
 | Shahrin Hossain | 210041125 | [@ShahrinHossain](https://github.com/ShahrinHossain) |
-| Sadman Ahmed Siam | 210041135 | — |
+| Sadman Ahmed Siam | 210041135 | [@Sadman-Rahman-135](https://github.com/Sadman-Rahman135) |
 | Md. Abu Bakor Siddique | 210041137 | [@AbDhrubo](https://github.com/AbDhrubo) |
-| Sadman Rahman | 210041143 | — |
+| Sadman Rahman | 210041143 | [@Sadman7890](https://github.com/Sadman7890) |

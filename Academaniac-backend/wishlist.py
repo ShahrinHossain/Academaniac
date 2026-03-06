@@ -20,9 +20,14 @@ def add_to_wishlist():
         user_id = session.get('id')
         uni_rank = data.get('uni_rank')
         uni = University.query.filter_by(rank=uni_rank).first()
-        dept_name = data.get('dept_name')
+        if not uni:
+            return jsonify({"success": False, "message": f"University with rank {uni_rank} not found"}), 404
 
+        dept_name = data.get('dept_name')
         dept = Department.query.filter_by(uni_id=uni.id, name=dept_name).first()
+        if not dept:
+            return jsonify({"success": False, "message": f"Department '{dept_name}' not found"}), 404
+
         wish = Wishlist(user_id=user_id, uni_id=uni.id, program_id=dept.id)
         db.session.add(wish)
         db.session.commit()

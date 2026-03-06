@@ -86,7 +86,9 @@ def register():
     else:
         endpoint2_url = url_for('auth.send_mail', _external=True)
         response = requests.post(endpoint2_url, json={'email': email})
-        if response.status_code // 100 == 2:
+        email_sent = response.status_code // 100 == 2
+
+        if email_sent:
             data = response.json()
             code = data.get('code')
             otp = Verification.query.filter_by(email=email).first()
@@ -97,20 +99,28 @@ def register():
                 otp = Verification(email, code, datetime.now())
                 db.session.add(otp)
                 db.session.commit()
-            # otp = Verification(email, code, datetime.now())
-            # db.session.add(otp)
-            new_user_details = User_Details(new_user.id)
-            db.session.add(new_user_details)
-            db.session.add(new_user)
-            db.session.commit()
 
+        new_user_details = User_Details(new_user.id)
+        db.session.add(new_user_details)
+        db.session.add(new_user)
+
+        if not email_sent:
+            # Email service unavailable — auto-verify so the app remains usable
+            new_user.verified = 1
+
+        db.session.commit()
+
+        if email_sent:
             response_data = {
                 "success": "True",
                 "message": "Registration Success: Please Check Email for verification code"
             }
-            return jsonify(response_data), 201
         else:
-            return jsonify({"success": False, "message": "Failed to send email"}), response.status_code
+            response_data = {
+                "success": "True",
+                "message": "Registration Success: Email verification unavailable, account auto-verified"
+            }
+        return jsonify(response_data), 201
 
 
 @auth.route('/@me')
